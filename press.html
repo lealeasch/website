@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--special elite font-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Special+Elite&display=swap" rel="stylesheet">
+<!--Bluma style-->
+<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">-->
+<link rel="stylesheet" href="bulma/css/bulma.min.css">
+<!--custom style-->
+<link rel='stylesheet' type='text/css' href='style.css'>
+<!--font awesome-->
+<link href="fontawesome/css/all.css" rel="stylesheet" media="screen">
+
+
+
+<script type="text/javascript" src="bibtex.js"></script>
+
+</head>
+<body>
+
+<div class="header" style="background: #23292C">
+  <div class="title" 
+    style="background-image: url('media/signal.svg'); 
+    background-repeat: no-repeat;">
+    <div class="container">
+      <img src="media/lea.png" alt="lea" width="20%" height="30%">
+      <p>&nbsp;</p> 
+      <h1>Lea Schönherr</h1>
+      <h2>Postdoctoral Researcher</h2>
+      <hr>
+      <div class="text">
+        I am a postdoctoral researcher interested in information security with a focus on adversarial machine learning at <a href='https://etit.ruhr-uni-bochum.de/en/' target="_blank" style="color: #bbbbbb; ">Ruhr University Bochum</a> (RUB), Germany, in the DFG Cluster of Excellence <a href='https://casa.rub.de/' target="_blank" style="color: #bbbbbb; ">“Cyber Security in the Age of Large-Scale Adversaries“</a> (CASA).
+        
+        <p>&nbsp;</p> 
+      
+        My research includes all kinds of attacks against machine learning models, including adversarial examples and poisoning attacks with a focus on signal-driven input data like audio and speech by utilizing approchaes based on signal processing. I aim to develop domain-adaptive detection mechanisms and countermeasures, e.g., for Deepfakes and adversarial examples. 
+
+        <p>&nbsp;</p> 
+
+        During my Ph.D., I focused on the robustness of neural networks and the security of speech-based systems. I received my Ph.D. in 2021 from Ruhr University Bochum, where I was advised by Prof. Dr.-Ing. Dorothea Kolossa at the Cognitive Signal Processing group at Ruhr University Bochum (RUB), Germany. I received two scholarships from UbiCrypt (DFG Research Training Group) and <a href='https://casa.rub.de/' target="_blank" style="color: #bbbbbb; ">CASA</a> (DFG Cluster of Excellence).
+
+        <p>&nbsp;</p> 
+
+        I obtained my Master's degree in Electrical Engineering and Information Technology at RUB in 2015 after graduating from the <a href='https://www.english.hs-mannheim.de/departments/departments/information-technology.html' target="_blank" style="color: #bbbbbb; ">University of Applied Science in Mannheim</a> in Biomedical Engineering.
+
+      </div>
+
+      <div class="content has-text-left" style="font-family: 'Open Sans Condensed', sans-serif; font-size: 22px; color: white; padding-top: 15px;">
+        <p>
+          <a href='https://twitter.com/leaschnherr' target="_blank" style="color: white;"><i class="fab fa-twitter" ></i> </a> &nbsp; &middot; &nbsp; <a href='mailto:lea.schoenherr@gmail.com' target="_blank" style="color: white;"><i class="fas fa-envelope" ></i> </a> 
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<div class="body" style="background: white; padding-bottom: 0px;">
+
+<div class="tabs is-large" id="tabs" style="  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 0px;
+  font-family: 'Special Elite', cursive; font-size: 30px;">
+    <ul>
+    <li><a href="./index.html#tabs">Publications</a></li>
+    <li><a href="./talks.html#tabs">Talks</a></li>
+    <li class="is-active"><a href="./press.html#tabs">Press</a></li>
+  </ul>
+</div>
+
+
+  <div class="columns">
+  
+  <!--<div class="column" style="height: 100vh;
+  flex: 240px 0 0; ">
+      <div class="anchors">
+          <a href="./index.html">Press</a>
+          <p>&nbsp;</p> 
+          <a href="./talks.html">Talks</a>
+          <p>&nbsp;</p> 
+          <a href="./press.html">Publications</a>
+      </div>
+    </div>-->
+
+  </div>
+</div>
+
+<div class="overlay" id="overlay">
+    <div class="notification is-info is-light" id="text" style="  border-radius: 25px; background: #23292Ce0;
+  top: 35%;
+  width: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  ">
+      <button class="delete" onclick="off()"></button>
+      <div style="color: white; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px;"id="div1">
+      </div>
+    </div>
+</div>
+
+
+
+<script>
+
+function on(text) {
+  document.getElementById("div1").innerHTML = text;
+  document.getElementById("overlay").style.display = "block";
+  overflow: hidden
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+</script>
+
+</body>
+
+<footer class="footer">
+  <div class="content has-text-right" style="font-family: 'Open Sans Condensed', sans-serif; font-size: 22px; color: #999999;">
+    <p>
+      <a href=# style="color: #999999;">Lea Schönherr</a>&nbsp; &middot; &nbsp; <a href='https://twitter.com/leaschnherr' target="_blank" style="color: #999999;"><i class="fab fa-twitter" ></i> </a> &nbsp; &middot; &nbsp; <a href='mailto:lea.schoenherr@gmail.com' target="_blank" style="color: #999999;"><i class="fas fa-envelope" ></i> </a> 
+    </p>
+  </div>
+</footer>
+
+</html>
