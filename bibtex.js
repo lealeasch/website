@@ -1,9 +1,13 @@
 var bibtex = {
 
+    'hajipour-23-codellm': '<p>@inproceedings{hajipour-23-codellm,<br>&nbsp;&nbsp;&nbsp;&nbsp;author={Hossein Hajipour, Thorsten Holz, Lea Sch{\\"o}nherr, Mario Fritz},<br>&nbsp;&nbsp;&nbsp;&nbsp;title={Systematically Finding Security Vulnerabilities in Black-Box Code Generation Models},<br>&nbsp;&nbsp;&nbsp;&nbsp;booktitle = {ArXiv},<br>&nbsp;&nbsp;&nbsp;&nbsp;year={2023}<br>}</p>',
+
     'pape-23-uncertainty': '<p>@inproceedings{pape-23-uncertainty,<br>&nbsp;&nbsp;&nbsp;&nbsp;author={David Pape, Sina D{\\"a}ubener, Thorsten Eisenhofer, Antonio Emanuele Cin{\\`a}, Lea Sch{\\"o}nherr},<br>&nbsp;&nbsp;&nbsp;&nbsp;title={On the Limitations of Model Stealing with Uncertainty Quantification Models},<br>&nbsp;&nbsp;&nbsp;&nbsp;booktitle = {European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning (ESANN)},<br>&nbsp;&nbsp;&nbsp;&nbsp;year={2023}<br>}</p>',
 
     'schiller-23-drone': '<p>@inproceedings{schiller-23-drone,<br>&nbsp;&nbsp;&nbsp;&nbsp;author={Nico Schiller, Merlin Chlosta, Moritz Schloegel, Nils Bars, Thorsten Eisenhofer, Tobias Scharnowski, Felix Domke, Lea Sch{\\"o}nherr, Thorsten Holz},<br>&nbsp;&nbsp;&nbsp;&nbsp;title={Drone Security and the Mysterious Case of DJI’s DroneID},<br>&nbsp;&nbsp;&nbsp;&nbsp;booktitle = {Network and Distributed System Security Symposium (NDSS)},<br>&nbsp;&nbsp;&nbsp;&nbsp;year={2023}<br>}</p>',
-    
+  
+    'aghakhani-23-venomave': '<p>@inproceedings{aghakhani-23-venomave,<br>&nbsp;&nbsp;&nbsp;&nbsp;author={Hojjat Aghakhani, Thorsten Eisenhofer, Lea Sch{\\"o}nherr, Dorothea Kolossa, Thorsten Holz, Christopher Kruegel, and Giovanni Vign},<br>&nbsp;&nbsp;&nbsp;&nbsp;title={VENOMAVE: Clean-Label Poisoning Against Speech Recognition},<br>&nbsp;&nbsp;&nbsp;&nbsp;booktitle = {Secure and Trustworthy Machine Learning (SatML)},<br>&nbsp;&nbsp;&nbsp;&nbsp;year={2023}<br>}</p>',
+  
     'koppelmann-22-privacy': '<p>@inproceedings{koppelmann-22-privacy,<br>&nbsp;&nbsp;&nbsp;&nbsp;author={Timm Koppelmann and Luca Beckera and Alexandru Nelus and Rene Glitza and Lea Sch{\\"o}nherr and Rainer Martin},<br>&nbsp;&nbsp;&nbsp;&nbsp;title={Clustering-based Wake Word Detection in Privacy-aware Acoustic Sensor Networks},<br>&nbsp;&nbsp;&nbsp;&nbsp;booktitle={Conference of the International Speech Communication Association (INTERSPEECH)},<br>&nbsp;&nbsp;&nbsp;&nbsp;year={2023}<br>}</p>',
 
     'schoenherr-22-unacceptable': '<p>@article{schoenherr-22-unacceptable,<br>&nbsp;&nbsp;&nbsp;&nbsp;author={Lea Sch{\\"o}nherr and Maximilian Golla and Thorsten Eisenhofer and Jan Wiele and Dorothea Kolossa and Thorsten Holz},<br>&nbsp;&nbsp;&nbsp;&nbsp;title={Unacceptable, where is my privacy? Exploring Accidental Triggers of Smart Speakers},<br>&nbsp;&nbsp;&nbsp;&nbsp;journal = {Computer Speech \&amp; Language},<br>&nbsp;&nbsp;&nbsp;&nbsp;publisher = {Elsevier},<br>&nbsp;&nbsp;&nbsp;&nbsp;year={2022}<br>}</p>',
