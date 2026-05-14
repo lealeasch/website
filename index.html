@@ -1,449 +1,1887 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Lea Schönherr</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--special elite font-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Special+Elite&display=swap" rel="stylesheet">
-<!--Bluma style-->
-<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">-->
-<link rel="stylesheet" href="bulma/css/bulma.min.css">
-<!--custom style-->
-<link rel='stylesheet' type='text/css' href='style.css'>
-<!--font awesome-->
-<link href="fontawesome/css/all.css" rel="stylesheet" media="screen">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lea Schönherr</title>
+  <link rel="icon" href="https://hive.dormantneurons.science/static/Hive.svg" type="image/svg+xml" />
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: swap;
+      src: url('fonts/lora-400-600-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Lora';
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: swap;
+      src: url('fonts/lora-400-600-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Lora';
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url('fonts/lora-400-italic-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Lora';
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url('fonts/lora-400-italic-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Open Sans Condensed';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url('fonts/open-sans-condensed-300-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Open Sans Condensed';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url('fonts/open-sans-condensed-300-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Special Elite';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('fonts/special-elite-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Special Elite';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('fonts/special-elite-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+  </style>
+  <script src="bibtex.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<link rel="icon" href="media/fav.png" type="image/x-icon">
+    :root {
+      --hive-yellow: #FDA20A;
+      --hero-bg: #FEEDB8;
+      --amber-dark: #7a4e00;
+      --amber-mid: #b87800;
+      --badge-bg: #fef9ec;
+      --badge-border: #d4a830;
+      --divider: #e8d080;
+      --divider-subtle: #f5f0e0;
+      --hero-dark: #3a2000;
+      --modal-bg: #fff8e8;
+      --text-faint: #bbb;
+      --text: #1a1a1a;
+      --text-muted: #555;
+      --border: #ddd;
+      --pub-title-color: #5a3500;
+      --copy-success: #2a6000;
+      --link-muted: #999;
+      --amber: #a06600;
+      --nav-h: 53px;
+      --h2-h: 3.0rem;
+    }
 
-<script type="text/javascript" src="bibtex.js"></script>
+    html { scroll-behavior: smooth; }
 
+    body {
+      font-family: 'Open Sans Condensed', 'Arial Narrow', sans-serif;
+      font-size: 18px;
+      background: #fff;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Top nav (merged) ── */
+    .top-bar { display: none; }
+
+    /* ── Amber hero header ── */
+    #hero {
+      background: linear-gradient(to top, var(--hive-yellow), var(--hero-bg));
+      padding: 60px 0 44px;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .hero-photo {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border-radius: 50%;
+    }
+
+    .hero-name {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 2.5rem;
+      color: #1a1a1a;
+      margin-bottom: 0.15rem;
+      line-height: 1.15;
+    }
+
+    .hero-role {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.15rem;
+      color: var(--hero-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-hr {
+      border: none;
+      border-top: 1px solid rgba(0,0,0,0.2);
+      margin: 0.75rem 0 1rem;
+    }
+
+    .hero-bio {
+      font-size: 1.05rem;
+      color: #1a1a1a;
+      line-height: 1.75;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-bio a { color: var(--hero-dark); text-decoration: none; font-weight: 600; }
+    .hero-bio a:hover { text-decoration: underline; }
+
+    .hero-links {
+      font-size: 1.05rem;
+      color: #1a1a1a;
+    }
+
+    .hero-links a { color: #1a1a1a; text-decoration: none; font-weight: 600; }
+    .hero-links a:hover { text-decoration: underline; }
+    .hero-links .dot { color: rgba(0,0,0,0.35); margin: 0 0.5rem; }
+
+    /* ── Sticky nav (logo + name left, links right) ── */
+    .tabs-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 3px solid var(--hive-yellow);
+    }
+
+    .tabs-nav-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .tabs-nav-brand {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1rem;
+      color: #1a1a1a;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      flex-shrink: 0;
+    }
+
+    .tabs-nav-logo {
+      height: 30px;
+      width: 30px;
+      object-fit: contain;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .tabs-nav-links {
+      display: flex;
+      gap: 0;
+    }
+
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #444;
+      padding: 0.3rem 0.15rem;
+      line-height: 1;
+    }
+
+    .tabs-nav a {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.1rem;
+      color: #444;
+      text-decoration: none;
+      padding: 0.6rem 0 0.6rem 1.25rem;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -3px;
+      transition: color 0.15s, border-color 0.15s;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .tabs-nav a:hover {
+      color: #000;
+      border-bottom-color: var(--hive-yellow);
+    }
+
+    /* ── Content wrapper ── */
+    .content-wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section { padding: 2.5rem 0; }
+    section + section { border-top: 1px solid var(--divider); }
+
+    /* ── Section headings ── */
+    h2 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      position: sticky;
+      top: var(--nav-h);
+      background: #fff;
+      z-index: 50;
+      padding: 0.6rem 0 0.5rem;
+      margin-top: -0.6rem;
+    }
+
+    /* ── Research ── */
+    .research-quote {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--hive-yellow);
+    }
+
+    .research-areas {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+    }
+    .research-area {
+      border: 1px solid var(--divider-subtle);
+      border-radius: 6px;
+      padding: 1rem 1.1rem 1.1rem;
+    }
+    .research-area-label { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.5rem; }
+    .research-area-title {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.95rem;
+      color: var(--pub-title-color);
+      margin-bottom: 0.45rem;
+    }
+    .research-area-body {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .research-area-body a { color: var(--amber-dark); text-decoration: none; border-bottom: 1px solid var(--divider); }
+    .research-area-body a:hover { border-bottom-color: var(--amber-dark); }
+
+    /* ── Publications ── */
+    .year-heading {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.82rem;
+      color: #999;
+      margin: 1.75rem 0 0.5rem;
+      position: sticky;
+      top: calc(var(--nav-h) + var(--h2-h));
+      background: #fff;
+      z-index: 40;
+      padding: 0.15rem 0;
+    }
+
+    .year-heading:first-child, h2 + .year-heading { margin-top: 0; }
+    h2:has(+ .year-heading) { margin-bottom: 0; padding-bottom: 0; }
+    h2 + .year-heading { padding-top: 0; }
+
+    .pub-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .pub-main { flex: 1; min-width: 0; }
+
+    .pub-right {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.25rem;
+      min-width: 80px;
+      padding-top: 0.15rem;
+    }
+
+    .venue-badge {
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .pub-right .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.1rem 0;
+    }
+
+    .pub-authors {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 0.1rem;
+    }
+
+    .pub-authors strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .pub-title {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1rem;
+      color: var(--pub-title-color);
+      margin-bottom: 0.1rem;
+    }
+
+    .pub-links a {
+      color: var(--link-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+    }
+
+    .pub-links a:hover { text-decoration: underline; color: #666; }
+
+    .pub-link-btn {
+      cursor: pointer;
+    }
+
+    .pub-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.35rem; }
+    .pub-tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .tag-llm        { background: #fef3dc; color: #a06000; }
+    .tag-speech     { background: #e0f4f1; color: #00695c; }
+    .tag-adversarial{ background: #fce8e8; color: #b71c1c; }
+    .tag-deepfakes  { background: #f3e8ff; color: #6b21a8; }
+    .tag-privacy    { background: #e8f5e9; color: #2e7d32; }
+    .tag-code       { background: #e3f2fd; color: #1565c0; }
+    .tag-agents     { background: #fff3e0; color: #c04e00; }
+    .tag-human      { background: #fce8f0; color: #9c2752; }
+    .tag-attack     { background: #fde8e0; color: #b83000; }
+    .tag-defense    { background: #dff0e8; color: #0a6640; }
+    .tag-meta       { background: #efefef; color: #444; }
+    a.pub-tag { text-decoration: none; }
+    a.pub-tag:hover { filter: brightness(0.88); }
+    @keyframes area-highlight {
+      0%, 25% { border-color: var(--hive-yellow); box-shadow: 0 0 0 3px rgba(253,162,10,0.18); }
+      100%    { border-color: var(--divider-subtle); box-shadow: none; }
+    }
+    .research-area.highlight { animation: area-highlight 1.6s ease forwards; }
+
+    /* ── Talks ── */
+    .talk-block {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--divider-subtle);
+    }
+
+    .talk-block:last-child { border-bottom: none; }
+
+    .talk-year {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1rem;
+      color: #999;
+      min-width: 42px;
+      flex-shrink: 0;
+      padding-top: 0.1rem;
+    }
+
+    .talk-body {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      flex: 1;
+    }
+
+    .talk-thumb {
+      width: 130px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 3px;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .talk-title {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 0.1rem;
+    }
+
+    .talk-venue {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .talk-links { margin-top: 0.2rem; }
+    .talk-links a {
+      color: var(--link-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+    }
+    .talk-links a:hover { text-decoration: underline; color: #666; }
+
+    .talk-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+      line-height: 1.55;
+    }
+
+    .talk-keynote {
+      font-family: 'Open Sans Condensed', 'Arial Narrow', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--amber-dark);
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      border-radius: 3px;
+      padding: 0.2rem 0.5rem;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Press ── */
+    .press-section-label {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-faint);
+      margin-bottom: 0.9rem;
+    }
+
+    .press-featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 3rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .press-fi-date {
+      font-size: 0.82rem;
+      color: #999;
+      margin-bottom: 0.15rem;
+    }
+
+    .press-fi-title {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      text-decoration: none;
+      line-height: 1.4;
+      margin-bottom: 0.2rem;
+    }
+
+    .press-fi-title:hover { color: var(--amber-dark); text-decoration: underline; }
+
+    .press-fi-outlet {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.82rem;
+      color: var(--amber);
+    }
+
+    .press-plain-list { display: flex; flex-direction: column; }
+
+    .press-plain-item {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid var(--divider-subtle);
+      text-decoration: none;
+      color: inherit;
+      align-items: baseline;
+    }
+
+    .press-plain-item:last-child { border-bottom: none; }
+
+    .press-plain-item:hover .press-pi-title { color: var(--amber-dark); text-decoration: underline; }
+
+    .press-pi-outlet {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.78rem;
+      color: var(--amber);
+      white-space: nowrap;
+      flex-shrink: 0;
+      min-width: 140px;
+    }
+
+    .press-pi-title {
+      font-size: 0.85rem;
+      color: #444;
+      flex: 1;
+      line-height: 1.4;
+    }
+
+    .press-pi-date {
+      font-size: 0.78rem;
+      color: #aaa;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── Teaching ── */
+    .teaching-block {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--divider-subtle);
+    }
+
+    .teaching-block:last-child { border-bottom: none; }
+
+    .teaching-year {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.95rem;
+      color: #999;
+      min-width: 110px;
+      flex-shrink: 0;
+      padding-top: 0.1rem;
+    }
+
+    .teaching-name {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .teaching-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .teaching-type-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      border-radius: 3px;
+      padding: 0.2rem 0.5rem;
+      color: var(--amber-dark);
+      letter-spacing: 0.02em;
+    }
+
+    .teaching-loc-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: var(--amber-dark);
+      border: 1px solid var(--amber-dark);
+      border-radius: 3px;
+      padding: 0.2rem 0.5rem;
+      color: #fff;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 3px solid var(--hive-yellow);
+      padding: 1.5rem 0;
+      margin-top: 1rem;
+      background: var(--modal-bg);
+    }
+
+    .footer-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-text {
+      font-size: 0.875rem;
+      color: #888;
+    }
+
+    .footer-links { display: flex; gap: 1.25rem; }
+
+    .footer-links a {
+      font-size: 0.875rem;
+      color: var(--amber);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { text-decoration: underline; }
+
+    /* ── Responsive ── */
+    @media (max-width: 680px) {
+      .research-areas { grid-template-columns: 1fr; }
+      /* Nav — hamburger */
+      .nav-hamburger { display: block; }
+      .tabs-nav-brand-text { display: none; }
+      .tabs-nav-inner { flex-wrap: wrap; }
+      .tabs-nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        border-top: 1px solid var(--divider-subtle);
+        padding: 0.15rem 0 0.4rem;
+      }
+      .tabs-nav.nav-open .tabs-nav-links { display: flex; }
+      .tabs-nav-links a {
+        font-size: 1rem;
+        padding: 0.5rem 1.1rem;
+        border-bottom: none;
+        margin-bottom: 0;
+        display: block;
+      }
+      .tabs-nav-links a:hover {
+        border-bottom-color: transparent;
+        border-left: 3px solid var(--hive-yellow);
+        padding-left: calc(1.1rem - 3px);
+      }
+
+      /* Hero */
+      #hero { padding: 32px 0 24px; }
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      .hero-photo { width: 110px; height: 110px; }
+      .hero-name { font-size: 1.9rem; }
+      .hero-role { font-size: 1rem; }
+      .hero-bio { font-size: 0.95rem; }
+      .hero-links { font-size: 0.95rem; }
+
+      /* Publications: stack badge+links below title */
+      .pub-block {
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+      .pub-right {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        min-width: 0;
+        padding-top: 0;
+        gap: 0.35rem;
+      }
+      .pub-right .pub-links {
+        justify-content: flex-start;
+      }
+
+      /* Talks: stack thumbnail */
+      .talk-body { flex-direction: column; }
+      .talk-thumb { width: 100%; aspect-ratio: 16 / 9; height: auto; }
+
+      /* Press: single column */
+      .press-featured { grid-template-columns: 1fr; }
+      .press-pi-outlet { min-width: 100px; }
+
+      /* Footer: stack */
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      /* Section spacing */
+      section { padding: 1.75rem 0; }
+    }
+
+    [id] { scroll-margin-top: var(--nav-h); }
+  </style>
 </head>
 <body>
 
-<div class="header" style="background: #23292C; padding-top: 80px; padding-bottom: 40px; ">
-  <div class="title" 
-    style="background-image: url('media/signal.svg'); background-repeat: no-repeat; padding-left: 20px; padding-right: 20px;">
-    <div class="container" >
-      <div class="columns">
-        <div class="column">
-          <div class="container" >
-            <img src="media/lea2.png" alt="lea" width="50%">
-          </div>
-        </div>
-        <div class="column">
-        </div>
+<!-- Hive top bar -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <a href="#hero" class="top-bar-name">
+      <img src="https://hive.dormantneurons.science/static/Hive.svg" alt="Hive" class="top-bar-logo" />
+      Lea Schönherr
+    </a>
+  </div>
+</div>
+
+<!-- Dark hero header -->
+<div id="hero">
+  <div class="container">
+    <div class="hero-layout">
+      <div>
+        <img
+          src="https://cispa.de/person-images/c01lesc.jpg"
+          alt="Lea Schönherr"
+          class="hero-photo"
+          onerror="this.style.display='none'"
+        />
       </div>
-    </div>
-    <div class="container">
-      <p>&nbsp;</p> 
-      <h1 style="font-family: 'Special Elite', cursive; font-size: 40px; color: white;">Lea Schönherr</h1>
-      <h2 style="font-family: 'Special Elite', cursive; font-size: 20px; color: white;">Faculty</h2>
-      <hr>
-      <div class="text" style="font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; color: white;">
-        I am a tenure-track faculty at <a href='https://cispa.de/en' target="_blank" style="color: #bbbbbb; ">CISPA</a>  Helmholtz Center for Information Security since 2022. 
-        I received my PhD in 2021 from <a href='https://etit.ruhr-uni-bochum.de/en/' target="_blank" style="color: #bbbbbb; ">Ruhr University Bochum</a>, Germany, in the DFG Cluster of Excellence <a href='https://casa.rub.de/' target="_blank" style="color: #bbbbbb; ">“Cyber Security in the Age of Large-Scale Adversaries“</a> (CASA). My research interests lie in the area of system-level adversarial machine learning and trustworthy generative AI. After my PhD I was visiting researcher at the University of California, Berkeley, and the University of Chicago.
-        
-        <p>&nbsp;</p> 
-      
-        In my <a href='https://dormantneurons.science' target="_blank" style="color: #bbbbbb; ">Dormant Neurons research group</a> our vision is to build secure, safe, and fair AI that people can trust. 
-        
-        <p>&nbsp;</p> 
-
-        Our work includes research on attacks and defenses for AI including LLM, multimodal systems, speech recognition systems, and generative models, as well as methods to prevent the misuse of generative AI. This includes robust feature analysis and studying human factors involved in recognizing generated media. In addition, we investigate code-generating models, focusing on understanding the strengths and limitations of automated systems. For more information on our research, please also see the <a href='https://dormantneurons.science' target="_blank" style="color: #bbbbbb; ">Dormant Neurons</a> group website.
-
-        <p>&nbsp;</p> 
-
-        During my Ph.D., I was advised by Prof. Dr.-Ing. Dorothea Kolossa at the Cognitive Signal Processing group at Ruhr University Bochum (RUB), Germany. I also received two scholarships from UbiCrypt (DFG Research Training Group) and <a href='https://casa.rub.de/' target="_blank" style="color: #bbbbbb; ">CASA</a> (DFG Cluster of Excellence).
-
-      </div>
-
-      <div class="content has-text-left" style="font-family: 'Open Sans Condensed', sans-serif; font-size: 22px; color: white; padding-top: 15px;">
-        <p>
-          <a href='mailto:lea.schoenherr@gmail.com' target="_blank" style="color: white;"><i class="fas fa-envelope" ></i> </a> 
-          &nbsp; &middot; &nbsp; <a href='https://scholar.google.com/citations?user=DtLfiGoAAAAJ&hl=en&oi=ao' target="_blank" style="color: white;"><i class="fab fa-google-scholar"></i> </a>
-          &nbsp; &middot; &nbsp; <a href='https://www.linkedin.com/in/lea-schönherr-33113a156/' target="_blank" style="color: white;"><i class="fab fa-linkedin" ></i> </a>
-          </p>
+      <div>
+        <h1 class="hero-name">Lea Schönherr</h1>
+        <p class="hero-role">Faculty · CISPA Helmholtz Center for Information Security</p>
+        <hr class="hero-hr" />
+        <p class="hero-bio">
+          I am a tenure-track faculty at <a href="https://cispa.de/en" target="_blank" rel="noopener">CISPA</a> Helmholtz Center for Information Security since 2022.
+          I received my PhD in 2021 from <a href="https://etit.ruhr-uni-bochum.de/en/" target="_blank" rel="noopener">Ruhr University Bochum</a>, Germany, in the DFG Cluster of Excellence
+          <a href="https://casa.rub.de/" target="_blank" rel="noopener">"Cyber Security in the Age of Large-Scale Adversaries"</a> (CASA).
+          My research interests lie in the area of system-level adversarial machine learning and trustworthy generative AI.
+          After my PhD I was visiting researcher at the University of California, Berkeley, and the University of Chicago.
+        </p>
+        <p class="hero-bio">
+          In my research group <a href="https://dormantneurons.science" target="_blank" rel="noopener">Dormant Neurons</a> we work on the security of AI systems, spanning LLMs and agentic pipelines, speech and audio models, synthetic media and deepfake detection, and the human factors involved in AI-driven threats. Our research covers both attacks and defenses, with the goal of building AI that is secure, safe, and fair.
+        </p>
+        <p class="hero-links">
+          <a href="mailto:schoenherr@cispa.de">Email</a>
+          <span class="dot">&middot;</span>
+          <a href="https://scholar.google.com/citations?user=DtLfiGoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <span class="dot">&middot;</span>
+          <a href="https://www.linkedin.com/in/lea-schoenherr" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="dot">&middot;</span>
+          <a href="https://cispa.de/de/people/c01lesc" target="_blank" rel="noopener">CISPA Profile</a>
+        </p>
       </div>
     </div>
   </div>
 </div>
 
-
-<div class="body" style="background: white; padding-bottom: 0px;">
-
-<div class="tabs is-small" id="tabs" style="  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  background-color: white;
-  padding: 0px;
-  font-family: 'Special Elite', cursive; font-size:30px;">
-  <ul>
-    <li class="is-active"><a href="./index.html#tabs">Publications</a></li>
-    <li><a href="./talks.html#tabs">Talks</a></li>
-    <li><a href="./press.html#tabs">Press</a></li>
-    <li><a href="./teaching.html#tabs">Teaching</a></li>
-  </ul>
-</div>
-
-  <div class="columns">
-    <div style="margin-left: auto; margin-right: auto; margin-bottom: 20px; width: 75%; font-size:1vw;">
-      <div class="column" style="background: white; flex-grow: 1;">
-          <p>&nbsp;</p> 
-          <h1>2026</h1>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Jonathan Evertz, Niklas Risse, Nicolai Neuer, Andreas Müller, Philipp Normann, Gaetano Sapia, Srishti Gupta, David Pape, Soumya Shaw, Devansh Srivastav, Christian Wressnegger, Erwin Quiring, Thorsten Eisenhofer, Daniel Arp, Lea Schönherr</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Chasing Shadows: Pitfalls in LLM Security Research</p> 
-              <p >Network and Distributed System Security Symposium (NDSS) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2512.09549" target="_blank" style="color: #999999; ">[Paper]</a><a onclick="on(bibtex['evertz-26-shadows'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Shir Bernstein, David Beste, Daniel Ayzenshteyn, Lea Schönherr, Yisroel Mirsky</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Trust Me, I Know This Function: Hijacking LLM Static Analysis using Bias</p> 
-              <p >Network and Distributed System Security Symposium (NDSS) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2508.17361" target="_blank" style="color: #999999; ">[Paper]</a><a onclick="on(bibtex['bernstein-26-trust'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Sandra Höltervennhoff, Jonas Ricker, Maike M Raphael, Charlotte Schwedes, Rebecca Weil, Asja Fischer, Thorsten Holz, Lea Schönherr, Sascha Fahl</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Security Benefits and Side Effects of Labeling AI-Generated Images</p> 
-              <p >ACM Conference on Human Factors in Computing Systems (CHI) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2505.22845" target="_blank" style="color: #999999; ">[Paper]</a><a onclick="on(bibtex['holtvennhoff-26-labeling'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Rostislav Makarov, Lea Schönherr, Timo Gerkmann</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Are Modern Speech Enhancement Systems Vulnerable to Adversarial Attacks?</p> 
-              <p >IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2509.21087?" target="_blank" style="color: #999999; ">[Paper]</a><a onclick="on(bibtex['makarov-26-speech'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Sina Mavali, Jonas Ricker, David Pape, Asja Fischer, Lea Schönherr</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Adversarial Robustness of AI-Generated Image Detectors in the Real World</p> 
-              <p >Conference on Detection of Intrusions and Malware & Vulnerability Assessment (DIMVA) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2410.01574?" target="_blank" style="color: #999999; ">[Paper]</a><a onclick="on(bibtex['mavali-26-robustfake'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Jonathan Evertz, Merlin Chlosta, Lea Schönherr, and Thorsten Eisenhofer</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Whispers in the Machine: Confidentiality in LLM-integrated Systems</p> 
-              <p >Conference on Detection of Intrusions and Malware & Vulnerability Assessment (DIMVA) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://eisenhofer.me/data/evertz-24-whispers.pdf" target="_blank" style="color: #999999; ">[Paper]</a><a onclick="on(bibtex['evertz-26-whisper'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <h1>2025</h1>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>David Pape, Sina Mavali, Thorsten Eisenhofer, and Lea Schönherr</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Prompt Obfuscation for Large Language Models</p> 
-              <p >USENIX Security Symposium &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://www.usenix.org/system/files/usenixsecurity25-pape.pdf" target="_blank" style="color: #999999; ">[Paper]</a><a onclick="on(bibtex['pape-25-obfuscation'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Srishti Gupta, Daniele Angioni, Maura Pintor, Ambra Demontis, Lea Schönherr, Fabio Roli, Battista Biggio</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Buffer-free Class-Incremental Learning with Out-of-Distribution Detection</p> 
-              <p>Pattern Recognition &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2505.23412" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['gupta-25-build'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>João Borges S. Carvalho, Víctor Jiménez Rodríguez, Alessandro Torcinovich, Antonio E Cinà, Carlos Cotrini, Lea Schönherr, Joachim M Buhmann</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Rethinking Robustness in Machine Learning: A Posterior Agreement Approach</p> 
-              <p >Transactions on Machine Learning Research (TMLR) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2503.16271" target="_blank" style="color: #999999; ">[Paper]</a><a onclick="on(bibtex['carvalho-25-robust'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Luca Olivieri, David Beste, Luca Negrini, Lea Schönherr, Antonio Emanuele Cina, Pietro Ferrara</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Code Generation of Smart Contracts with LLMs: A Case Study on Hyperledger Fabric</p> 
-              <p >International Symposium on Software Reliability Engineering (ISSRE) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://lucaneg.github.io/papers/ISSRE25.pdf" target="_blank" style="color: #999999; ">[Paper]</a><a onclick="on(bibtex['olivieri-25-smart'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>David Beste, Grégoire Menguy, Hossein Hajipour, Mario Fritz, Antonio Emanuele Cinà, Sébastien Bardin, Thorsten Holz, Thorsten Eisenhofer, Lea Schönherr</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Exploring the Potential of LLMs for Code Deobfuscation</p> 
-              <p >Conference on Detection of Intrusions and Malware & Vulnerability Assessment (DIMVA) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://drive.google.com/file/d/1k5IezVdFPl0s7Upq5HVLpQlvB5x3sZ2o/view" target="_blank" style="color: #999999; ">[Paper]</a><a onclick="on(bibtex['beste-25-deobfuscation'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Antonio Emanuele Cinà, Francesco Villani, Maura Pintor, Lea Schönherr, Battista Biggio, and Marcello Pelillo</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">σ-Zero: Gradient-based Optimization of l0-norm Adversarial Examples</p> 
-              <p >International Conference on Learning Representations (ICLR) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2402.01879" target="_blank" style="color: #999999; ">[Paper]</a><a onclick="on(bibtex['cina-25-l0'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <h1>2024</h1>
-             <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Edoardo Debenedetti, Javier Rando, Daniel Paleka, Silaghi Fineas Florin, Dragos Albastroiu, Niv Cohen, Yuval Lemberg, Reshmi Ghosh, Rui Wen, Ahmed Salem, Giovanni Cherubin, Santiago Zanella-Beguelin, Robin Schmid, Victor Klem, Takahiro Miki, Chenhao Li, Stefan Kraft, Mario Fritz, Florian Tramèr, Sahar Abdelnabi, and Lea Schönherr</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Dataset and Lessons Learned from the 2024 SaTML LLM Capture-the-Flag Competition</p> 
-              <p >NeurIPS Datasets and Benchmarks Track &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2406.07954" target="_blank" style="color: #999999; ">[Paper]</a><a onclick="on(bibtex['debenedetti-24-competition'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Sahar Abdelnabi, Amr Gomaa, Sarath Sivaprasad, Lea Schönherr, and Mario Fritz</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Cooperation, Competition, and Maliciousness: LLM-Stakeholders Interactive Negotiation</p> 
-              <p >NeurIPS Datasets and Benchmarks Track &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2309.17234.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['abdelnabi-24-negotiation'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Bhupendra Acharya, Dario Lazzaro, Efrén López-Morales, Adam Oest, Muhammad Saad, Antonio Emanuele Cinà, Lea Schönherr, and Thorsten Holz</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">The Imitation Game: Exploring Brand Impersonation Attacks on Social Media Platforms</p> 
-              <p >USENIX Security Symposium &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://www.usenix.org/conference/usenixsecurity24/presentation/acharya" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['acharya-24-imitation'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Joel Frank, Franziska Herbert, Jonas Ricker, Lea Schönherr, Thorsten Eisenhofer, Asja Fischer, Markus Dürmuth, and Thorsten Holz</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">A Representative Study on Human Detection of Artificially Generated Media Across Countries</p> 
-              <p >IEEE Security & Privacy (S&P) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2312.05976.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['frank-24-human'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Bhupendra Acharya, Muhammad Saad, Antonio Emanuele Cinà, Lea Schönherr, Hoang Dai Nguyen, Adam Oest, Phani Vadrevu, and Thorsten Holz</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Conning the Crypto Conman: End-to-End Analysis of Cryptocurrency-based Technical Support Scams</p> 
-              <p >IEEE Security & Privacy (S&P) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2401.09824.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['acharya-24-crypto'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Hossein Hajipour, Keno Hassler, Thorsten Holz, Lea Schönherr, and Mario Fritz</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">CodeLMSec Benchmark: Systematically Evaluating and Finding Security Vulnerabilities in Black-Box Code Language Models</p> 
-              <p >IEEE Secure and Trustworthy Machine Learning (SatML)  &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2302.04012.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['hajipour-24-codellm'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Soumya Shaw, Ben Nassi, and Lea Schönherr</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Generated Audio Detectors are Not Robust in Real-World Conditions</p> 
-              <p>ICML Workshop on Next Generation of AI Safety Workshop &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://openreview.net/forum?id=1R7RD1dfcC" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['shaw-24-wild'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Hossein Hajipour, Lea Schönherr, Thorsten Holz and Mario Fritz</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">HexaCoder: Secure Code Generation via Oracle-Guided Synthetic Training Data</p> 
-              <p >ArXiv &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/abs/2409.06446" target="_blank" style="color: #999999; ">[Paper]</a><a onclick="on(bibtex['hajipour-24-hexacoder'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <h1>2023</h1>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>David Pape, Sina Däubener, Thorsten Eisenhofer, Antonio Emanuele Cinà, and Lea Schönherr</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">On the Limitations of Model Stealing with Uncertainty Quantification Models</p> 
-              <p >European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning (ESANN) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2305.05293.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['pape-23-uncertainty'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Nico Schiller, Merlin Chlosta, Moritz Schloegel, Nils Bars, Thorsten Eisenhofer, Tobias Scharnowski, Felix Domke, Lea Schönherr, and Thorsten Holz</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Drone Security and the Mysterious Case of DJI’s DroneID</p> 
-              <p >Network and Distributed System Security Symposium (NDSS) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_f217_paper.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['schiller-23-drone'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Hojjat Aghakhani, Thorsten Eisenhofer, Lea Schönherr, Dorothea Kolossa, Thorsten Holz, Christopher Kruegel, and Giovanni Vigna</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">VENOMAVE: Clean-Label Poisoning Against Speech Recognition</p> 
-              <p >IEEE Secure and Trustworthy Machine Learning (SatML) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="https://arxiv.org/pdf/2010.10682.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['aghakhani-23-venomave'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <h1>2022</h1>
-            <!------------------->
-            <div class="block">
-            <div class="text">
-              <p>Timm Koppelmann, Luca Becker, Alexandru Nelus, Rene Glitza, Lea Schönherr, and Rainer Martin</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Clustering-based Wake Word Detection in Privacy-aware Acoustic Sensor Networks</p> 
-              <p >INTERSPEECH &nbsp;&nbsp; <span style="font-size: 18px;"><a href="./media/paper/2022_interspeech.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['koppelmann-22-privacy'])" style="color: #999999;">[BibTex]</a></span> </p>
-              </div>
-            </div>
-            <!------------------->
-            <div class="block">
-            <div class="text">
-              <p>Lea Schönherr, Maximilian Golla, Thorsten Eisenhofer, Jan Wiele, Dorothea Kolossa, and Thorsten Holz</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Exploring Accidental Triggers of Smart Speakers</p> 
-              <p >Computer Speech &amp; Language &nbsp;&nbsp; <span style="font-size: 18px;"><a href="./media/paper/2022_csl.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a href='https://unacceptable-privacy.github.io/' target="_blank" style="color: #999999;">[Website]</a> <a onclick="on(bibtex['schoenherr-22-unacceptable'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-            <!------------------->
-          <h1>2021</h1>
-            <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Joel Frank and Lea Schönherr</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">WaveFake: A Data Set to Facilitate Audio DeepFake Detection</p> 
-              <p >NeurIPS Datasets and Benchmarks Track &nbsp;&nbsp; <span style="font-size: 18px;"><a href="./media/paper/2021_neurips.pdf" target="_blank" style="color: #999999; ">[Paper]</a><a href='https://github.com/RUB-SysSec/dompteur' target="_blank"  style="color: #999999;">[Code]</a> <a href='https://www.youtube.com/watch?v=v2pAVp2NUQM' target="_blank" style="color: #999999;">[Talk]</a> <a onclick="on(bibtex['frank-21-wavefake'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Thorsten Eisenhofer, Lea Schönherr, Joel Frank, Lars Speckemeier, Dorothea Kolossa, and Thorsten Holz</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Dompteur: Taming Audio Adversarial Examples</p> 
-              <p >USENIX Security Symposium &nbsp;&nbsp; <span style="font-size: 18px;"><a href="./media/paper/2021_usenix.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a href='https://github.com/RUB-SysSec/dompteur' target="_blank"  style="color: #999999;">[Code]</a> <a href='https://www.youtube.com/watch?v=v2pAVp2NUQM' target="_blank" style="color: #999999;">[Talk]</a> <a onclick="on(bibtex['eisenhofer-21-dompteur'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Lea Schönherr</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Adverarially Robust Speech and Speaker Recognition</p> 
-              <p >Ruhr University Bochum&nbsp;&nbsp; <span style="font-size: 18px;"><a href="./media/paper/2021_diss.pdf" target="_blank" style="color: #999999; ">[Dissertation]</a> <a onclick="on(bibtex['schoenherr-21-dissertation'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Timm Koppelmann, Alexandru Nelus, Lea Schönherr, Dorothea Kolossa, and Rainer Martin</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Privacy-Preserving Feature Extraction for Cloud-Based Wake Word Verification</p> 
-              <p >INTERSPEECH &nbsp;&nbsp; <span style="font-size: 18px;"><a href="./media/paper/2021_interspeech.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['koppelmann-21-privacy'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <h1>2020</h1>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Joel Frank, Thorsten Eisenhofer, Lea Schönherr, Asja Fischer, Dorothea Kolossa, and Thorsten Holz</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Leveraging Frequency Analysis for Deep Fake Image Recognition</p> 
-              <p >ICML &nbsp;&nbsp; <span style="font-size: 18px;"><a href="./media/paper/2020_icml.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a href='https://github.com/RUB-SysSec/GANDCTAnalysis' target="_blank" style="color: #999999;">[Code]</a> <a href='https://slideslive.com/s/joel-frank-30731' target="_blank" style="color: #999999; onclick=;">[Talk]</a> <a onclick="on(bibtex['frank-20-frequency'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Lea Schönherr, Thorsten Eisenhofer, Steffen Zeiler, Thorsten Holz, and Dorothea Kolossa</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Imperio: Robust Over-the-Air Adversarial Examples for Automatic Speech Recognition Systems</p> 
-              <p >ACSAC &nbsp;&nbsp; <span style="font-size: 18px;"><a href="./media/paper/2020_acsac.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a href='https://www.youtube.com/watch?v=bC0D0b-wtlE' target="_blank" style="color: #999999;">[Talk]</a> <a onclick="on(bibtex['schoenherr-20-imperio'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Sina Däubener, Lea Schönherr, Asja Fischer, and Dorothea Kolossa</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Detecting Adversarial Examples for Speech Recognition via Uncertainty Quantification</p> 
-              <p >INTERSPEECH &nbsp;&nbsp; <span style="font-size: 18px;"><a href="./media/paper/2020_interspeech.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a href='https://github.com/rub-ksv/uncertaintyASR' target="_blank" style="color: #999999; onclick=;">[Code]</a> <a onclick="on(bibtex['daeubener-20-uncertainty'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Jan Freiwald, Lea Schönherr, Christopher Schymura, Steffen Zeiler, and Dorothea Kolossa</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Loss Functions for Deep Monaural Speech Enhancement</p> 
-              <p >IJCNN &nbsp;&nbsp; <span style="font-size: 18px;"><a href="./media/paper/2020_ijcnn.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['freiwald-20-enhancement'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <h1>2019</h1>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Lea Schönherr, Katharina Kohls, Steffen Zeiler, Thorsten Holz, and Dorothea Kolossa</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Adversarial Attacks Against Automatic Speech Recognition Systems via Psychoacoustic Hiding</p> 
-              <p >Network and Distributed System Security Symposium (NDSS) &nbsp;&nbsp; <span style="font-size: 18px;"><a href="./media/paper/2019_ndss.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a href='https://adversarial-attacks.net/' target="_blank" style="color: #999999;">[Website]</a> <a href='https://github.com/lealeasch/adversarialattacks' target="_blank" style="color: #999999;">[Code]</a> <a href='https://www.youtube.com/watch?v=l_AkXxZt10I' target="_blank"  style="color: #999999; ">[Talk]</a> <a onclick="on(bibtex['schoenherr-19-psychoacoustic'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <h1>2017</h1>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Lea Schönherr, Steffen Zeiler, and Dorothea Kolossa</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Spoofing Detection via Simultaneous Verification of Audio-Visual Synchronicity and Transcription</p> 
-              <p >ASRU &nbsp;&nbsp; <span style="font-size: 18px;"><a href="./media/paper/2017_asru.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['schoenherr-17-spoofing'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-          <h1>2016</h1>
-          <!------------------->
-          <div class="block">
-            <div class="text">
-              <p>Lea Schönherr, Dennis Orth, Martin Heckmann, and Dorothea Kolossa</p>
-              <p style="color: #23292C; font-family: 'Special Elite', cursive;">Environmentally Robust Audio-Visual Speaker Identification</p> 
-              <p >SLT &nbsp;&nbsp; <span style="font-size: 18px;"><a href="./media/paper/2016_slt.pdf" target="_blank" style="color: #999999; ">[Paper]</a> <a onclick="on(bibtex['schoenherr-16-audiovisual'])" style="color: #999999;">[BibTex]</a></span> </p>
-            </div>
-          </div>
-          <!------------------->
-      </div>
+<!-- Sticky nav -->
+<nav class="tabs-nav">
+  <div class="tabs-nav-inner">
+    <a href="#hero" class="tabs-nav-brand">
+      <img src="https://hive.dormantneurons.science/static/Hive.svg" alt="Hive" class="tabs-nav-logo" />
+      <span class="tabs-nav-brand-text">Lea Schönherr</span>
+    </a>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <div class="tabs-nav-links">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#talks">Talks</a>
+      <a href="#press">Press</a>
+      <a href="#teaching">Teaching</a>
     </div>
+  </div>
+</nav>
+
+<div class="content-wrap">
+
+  <!-- Research -->
+  <section id="research">
+    <h2>Research</h2>
+    <p class="research-quote">Building secure, safe, and fair AI that people can trust.</p>
+    <div class="research-areas">
+
+      <div class="research-area" id="research-llm">
+        <div class="research-area-label">
+          <span class="pub-tag tag-llm">LLM</span>
+          <span class="pub-tag tag-agents">Agents</span>
+          <span class="pub-tag tag-code">Code</span>
+        </div>
+        <h3 class="research-area-title">LLM &amp; Agentic Systems Security</h3>
+        <p class="research-area-body">As large language models are deployed in real-world pipelines they introduce novel attack surfaces. Our work addresses these from multiple angles: designing defenses against prompt injection attacks (<a href="#pub-prompt-obfuscation">Prompt Obfuscation</a>), analyse hidden intentions in LLMs (<a href="#pub-unknowns">Unknown Unknowns</a>), and how LLMs can both be exploited for and applied to code analysis and deobfuscation (<a href="#pub-deobfuscation">Code Deobfuscation</a>, <a href="#pub-codellmsec">CodeLMSec</a>).</p>
+      </div>
+
+      <div class="research-area" id="research-deepfakes">
+        <div class="research-area-label">
+          <span class="pub-tag tag-deepfakes">Deepfakes</span>
+        </div>
+        <h3 class="research-area-title">Preventing Misuse of Synthetic Media</h3>
+        <p class="research-area-body">AI-generated content, whether images or audio, is increasingly indistinguishable from authentic media, enabling misinformation, fraud, and manipulation at scale. Our research works toward preventing this misuse: developing detectors for synthetic audio (<a href="#pub-wavefake">WaveFake</a>) and GAN-generated images (<a href="#pub-frequency">frequency analysis</a>), studying how these detectors hold up under adversarial pressure in realistic conditions (<a href="#pub-robustfake">Adversarial Robustness of Image Detectors</a>), and examining how content labeling and warnings affect human trust and detection behavior (<a href="#pub-labeling">AI Image Labeling</a>).</p>
+      </div>
+
+      <div class="research-area" id="research-human">
+        <div class="research-area-label">
+          <span class="pub-tag tag-human">Human Factor</span>
+        </div>
+        <h3 class="research-area-title">Human-Centered AI System Security</h3>
+        <p class="research-area-body">Many AI security threats succeed not through technical exploits but by targeting or involving human judgment. Our research examines these human dimensions from several angles: how people detect AI-generated media across countries (<a href="#pub-human-detection">Human Detection Study</a>), how content labeling affects trust and detection behavior (<a href="#pub-labeling">Labeling AI-Generated Images</a>), and how everyday voice interfaces can be accidentally triggered by ambient audio (<a href="#pub-accidental-triggers">Accidental Triggers</a>).</p>
+      </div>
+
+      <div class="research-area" id="research-meta">
+        <div class="research-area-label">
+          <span class="pub-tag tag-meta">Meta Science</span>
+        </div>
+        <h3 class="research-area-title">Meta Security Science</h3>
+        <p class="research-area-body">Beyond individual attacks and defenses, some of our work questions how security research itself is conducted. One thread systematically examines nine methodological pitfalls in LLM security research, including data leakage, model ambiguity, prompt sensitivity, context truncation, and the surrogate fallacy, finding that every reviewed paper contains at least one (<a href="#pub-chasing-shadows">Chasing Shadows</a>). Another draws on a community-scale red-teaming competition to analyze what current LLM security benchmarks can and cannot tell us (<a href="#pub-satml-ctf">SaTML CTF</a>).</p>
+      </div>
+
+      <div class="research-area" id="research-attacksdefenses">
+        <div class="research-area-label">
+          <span class="pub-tag tag-attack">Attack</span>
+          <span class="pub-tag tag-defense">Defense</span>
+          <span class="pub-tag tag-adversarial">Adversarial ML</span>
+          <a href="#research-attacksdefenses" class="pub-tag tag-privacy">Privacy</a>
+        </div>
+        <h3 class="research-area-title">Attacks &amp; Defenses</h3>
+        <p class="research-area-body">Security research requires grounding in both offense and defense. On the offensive side, our work studies adversarial attacks on speech recognition via psychoacoustic hiding (<a href="#pub-psychoacoustic">Psychoacoustic Hiding</a>) and robust over-the-air perturbations (<a href="#pub-imperio">Imperio</a>), adversarial attacks on deepfake detectors (<a href="#pub-robustfake">Adversarial Robustness</a>), and eliciting security vulnerabilities from code language models (<a href="#pub-codellmsec">CodeLMSec</a>). On the defensive side: perceptually constrained defenses for audio adversarial examples (<a href="#pub-dompteur">Dompteur</a>) and prompt obfuscation against injection attacks (<a href="#pub-prompt-obfuscation">Prompt Obfuscation</a>).</p>
+      </div>
+
+      <div class="research-area" id="research-speech">
+        <div class="research-area-label">
+          <span class="pub-tag tag-speech">Speech &amp; Audio</span>
+        </div>
+        <h3 class="research-area-title">Speech &amp; Audio Security</h3>
+        <p class="research-area-body">Voice interfaces are a recurrent focus of our research. Early work established core attack methods: adversarial examples via psychoacoustic hiding (<a href="#pub-psychoacoustic">Psychoacoustic Hiding</a>), robust over-the-air perturbations (<a href="#pub-imperio">Imperio</a>), and clean-label poisoning of speech recognition models (<a href="#pub-venomave">VENOMAVE</a>). On the defensive side: perceptually constrained defenses (<a href="#pub-dompteur">Dompteur</a>) and privacy-preserving wake-word designs. More recently, this work extends to audio deepfake detection (<a href="#pub-wavefake">WaveFake</a>) and evaluating the fairness, safety, and security of audio language models (<a href="#pub-audio-lm">Audio LM Evaluation</a>).</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <h3 class="year-heading">2026</h3>
+
+    <div class="pub-block" id="pub-chasing-shadows">
+  <div class="pub-main">
+    <div class="pub-authors">Jonathan Evertz, Niklas Risse, Nicolai Neuer, Andreas Müller, Philipp Normann, Gaetano Sapia, Srishti Gupta, David Pape, Soumya Shaw, Devansh Srivastav, Christian Wressnegger, Erwin Quiring, Thorsten Eisenhofer, Daniel Arp, <strong>Lea Schönherr</strong></div>
+    <div class="pub-title">Chasing Shadows: Pitfalls in LLM Security Research</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-meta" class="pub-tag tag-meta">Meta Science</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">NDSS</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2512.09549" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('evertz-26-shadows')">[BibTeX]</a></div>
   </div>
 </div>
 
-<div class="overlay" id="overlay" style="  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5);">
-    <div class="notification is-info is-light" id="text" style="  border-radius: 25px; background: #23292Ce0; top: 25%; padding-top: 10px; margin-left: auto; margin-right: auto; margin-top: auto; margin-bottom: auto; width: 50%; font-size:calc(.25 * (2.0vh + 2.0vw));">
-      <button class="delete" onclick="off()"></button>
-      <div style="color: white; font-family: 'Open Sans Condensed', sans-serif;"id="div1">
-      </div>
-    </div>
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">Shir Bernstein, David Beste, Daniel Ayzenshteyn, <strong>Lea Schönherr</strong>, Yisroel Mirsky</div>
+    <div class="pub-title">Trust Me, I Know This Function: Hijacking LLM Static Analysis using Bias</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-llm" class="pub-tag tag-code">Code</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">NDSS</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2508.17361" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('bernstein-26-trust')">[BibTeX]</a></div>
+  </div>
 </div>
 
+    <div class="pub-block" id="pub-labeling">
+  <div class="pub-main">
+    <div class="pub-authors">Sandra Höltervennhoff, Jonas Ricker, Maike M Raphael, Charlotte Schwedes, Rebecca Weil, Asja Fischer, Thorsten Holz, <strong>Lea Schönherr</strong>, Sascha Fahl</div>
+    <div class="pub-title">Security Benefits and Side Effects of Labeling AI-Generated Images</div>
+    <div class="pub-tags"><a href="#research-deepfakes" class="pub-tag tag-deepfakes">Deepfakes</a> <a href="#research-human" class="pub-tag tag-human">Human Factor</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">CHI</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2505.22845" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('holtvennhoff-26-labeling')">[BibTeX]</a></div>
+  </div>
+</div>
 
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">Rostislav Makarov, <strong>Lea Schönherr</strong>, Timo Gerkmann</div>
+    <div class="pub-title">Are Modern Speech Enhancement Systems Vulnerable to Adversarial Attacks?</div>
+    <div class="pub-tags"><a href="#research-speech" class="pub-tag tag-speech">Speech &amp; Audio</a> <a href="#research-attacksdefenses" class="pub-tag tag-adversarial">Adversarial ML</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">ICASSP</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2509.21087" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('makarov-26-speech')">[BibTeX]</a></div>
+  </div>
+</div>
 
-<script>
+    <div class="pub-block" id="pub-robustfake">
+  <div class="pub-main">
+    <div class="pub-authors">Sina Mavali, Jonas Ricker, David Pape, Asja Fischer, <strong>Lea Schönherr</strong></div>
+    <div class="pub-title">Adversarial Robustness of AI-Generated Image Detectors in the Real World</div>
+    <div class="pub-tags"><a href="#research-deepfakes" class="pub-tag tag-deepfakes">Deepfakes</a> <a href="#research-attacksdefenses" class="pub-tag tag-adversarial">Adversarial ML</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">DIMVA</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2410.01574" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('mavali-26-robustfake')">[BibTeX]</a></div>
+  </div>
+</div>
 
-function on(text) {
-  document.getElementById("div1").innerHTML = text;
-  document.getElementById("overlay").style.display = "block";
-  overflow: hidden
-}
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">Jonathan Evertz, Merlin Chlosta, <strong>Lea Schönherr</strong>, Thorsten Eisenhofer</div>
+    <div class="pub-title">Whispers in the Machine: Confidentiality in LLM-integrated Systems</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-attacksdefenses" class="pub-tag tag-privacy">Privacy</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">DIMVA</span>
+    <div class="pub-links"><a href="https://eisenhofer.me/data/evertz-24-whispers.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('evertz-26-whisper')">[BibTeX]</a></div>
+  </div>
+</div>
 
-function off() {
-  document.getElementById("overlay").style.display = "none";
-}
-</script>
+    <div class="pub-block" id="pub-audio-lm">
+  <div class="pub-main">
+    <div class="pub-authors">Ranya Aloufi, Srishti Gupta, Soumya Shaw, Battista Biggio, <strong>Lea Schönherr</strong></div>
+    <div class="pub-title">Evaluation of Audio Language Models for Fairness, Safety, and Security</div>
+    <div class="pub-tags"><a href="#research-speech" class="pub-tag tag-speech">Speech &amp; Audio</a> <a href="#research-llm" class="pub-tag tag-llm">LLM</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">ArXiv</span>
+    <div class="pub-links"><a href="https://arxiv.org/abs/2603.13262" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('aloufi-26-audio')">[BibTeX]</a></div>
+  </div>
+</div>
 
-</body>
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">Samira Abedini, Sina Mavali, <strong>Lea Schönherr</strong>, Martin Pawelczyk, Rebekka Burkholz</div>
+    <div class="pub-title">Don't Trust Stubborn Neighbors: A Security Framework for Agentic Networks</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-llm" class="pub-tag tag-agents">Agents</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">ArXiv</span>
+    <div class="pub-links"><a href="https://arxiv.org/abs/2603.15809" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('abedini-26-stubborn')">[BibTeX]</a></div>
+  </div>
+</div>
 
-<footer class="footer" style="padding: 20px;
-  text-align: center;">
-  <div class="content has-text-right" style="font-family: 'Open Sans Condensed', sans-serif; font-size: 22px; color: #999999;">
-    <p>
-      <a href=# style="color: #999999;">Lea Schönherr</a>&nbsp; &middot; &nbsp; <a href='mailto:lea.schoenherr@gmail.com' target="_blank" style="color: #999999;"><i class="fas fa-envelope" ></i> </a> 
-          &nbsp; &middot; &nbsp; <a href='https://scholar.google.com/citations?user=DtLfiGoAAAAJ&hl=en&oi=ao' target="_blank" style="color: #999999;"><i class="fab fa-google-scholar"></i> </a>
-          &nbsp; &middot; &nbsp; <a href='https://www.linkedin.com/in/lea-schönherr-33113a156/' target="_blank" style="color: #999999;"><i class="fab fa-linkedin" ></i> </a>
-    </p>
+    <div class="pub-block" id="pub-unknowns">
+  <div class="pub-main">
+    <div class="pub-authors">Devansh Srivastav, David Pape, <strong>Lea Schönherr</strong></div>
+    <div class="pub-title">Unknown Unknowns: Why Hidden Intentions in LLMs Evade Detection</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">ArXiv</span>
+    <div class="pub-links"><a href="https://arxiv.org/abs/2601.18552" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('srivastav-26-unknowns')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <h3 class="year-heading">2025</h3>
+
+    <div class="pub-block" id="pub-prompt-obfuscation">
+  <div class="pub-main">
+    <div class="pub-authors">David Pape, Sina Mavali, Thorsten Eisenhofer, <strong>Lea Schönherr</strong></div>
+    <div class="pub-title">Prompt Obfuscation for Large Language Models</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-attacksdefenses" class="pub-tag tag-defense">Defense</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">USENIX Sec.</span>
+    <div class="pub-links"><a href="https://www.usenix.org/system/files/usenixsecurity25-pape.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('pape-25-obfuscation')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">Srishti Gupta, Daniele Angioni, Maura Pintor, Ambra Demontis, <strong>Lea Schönherr</strong>, Fabio Roli, Battista Biggio</div>
+    <div class="pub-title">Buffer-free Class-Incremental Learning with Out-of-Distribution Detection</div>
+    <div class="pub-tags"><a href="#research-attacksdefenses" class="pub-tag tag-adversarial">Adversarial ML</a> <a href="#research-attacksdefenses" class="pub-tag tag-defense">Defense</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">Pattern Recognit.</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2505.23412" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('gupta-25-build')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">João Borges S. Carvalho, Víctor Jiménez Rodríguez, Alessandro Torcinovich, Antonio E Cinà, Carlos Cotrini, <strong>Lea Schönherr</strong>, Joachim M Buhmann</div>
+    <div class="pub-title">Rethinking Robustness in Machine Learning: A Posterior Agreement Approach</div>
+    <div class="pub-tags"><a href="#research-attacksdefenses" class="pub-tag tag-adversarial">Adversarial ML</a> <a href="#research-attacksdefenses" class="pub-tag tag-defense">Defense</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">TMLR</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2503.16271" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('carvalho-25-robust')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">Luca Olivieri, David Beste, Luca Negrini, <strong>Lea Schönherr</strong>, Antonio Emanuele Cina, Pietro Ferrara</div>
+    <div class="pub-title">Code Generation of Smart Contracts with LLMs: A Case Study on Hyperledger Fabric</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-llm" class="pub-tag tag-code">Code</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">ISSRE</span>
+    <div class="pub-links"><a href="https://lucaneg.github.io/papers/ISSRE25.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('olivieri-25-smart')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block" id="pub-deobfuscation">
+  <div class="pub-main">
+    <div class="pub-authors">David Beste, Grégoire Menguy, Hossein Hajipour, Mario Fritz, Antonio Emanuele Cinà, Sébastien Bardin, Thorsten Holz, Thorsten Eisenhofer, <strong>Lea Schönherr</strong></div>
+    <div class="pub-title">Exploring the Potential of LLMs for Code Deobfuscation</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-llm" class="pub-tag tag-code">Code</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">DIMVA</span>
+    <div class="pub-links"><a href="https://drive.google.com/file/d/1k5IezVdFPl0s7Upq5HVLpQlvB5x3sZ2o/view" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('beste-25-deobfuscation')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block" id="pub-sigma-zero">
+  <div class="pub-main">
+    <div class="pub-authors">Antonio Emanuele Cinà, Francesco Villani, Maura Pintor, <strong>Lea Schönherr</strong>, Battista Biggio, Marcello Pelillo</div>
+    <div class="pub-title">σ-Zero: Gradient-based Optimization of l₀-norm Adversarial Examples</div>
+    <div class="pub-tags"><a href="#research-attacksdefenses" class="pub-tag tag-adversarial">Adversarial ML</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">ICLR</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2402.01879" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('cina-25-l0')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <h3 class="year-heading">2024</h3>
+
+    <div class="pub-block" id="pub-satml-ctf">
+  <div class="pub-main">
+    <div class="pub-authors">Edoardo Debenedetti, Javier Rando, Daniel Paleka, et al., <strong>Lea Schönherr</strong></div>
+    <div class="pub-title">Dataset and Lessons Learned from the 2024 SaTML LLM Capture-the-Flag Competition</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a> <a href="#research-meta" class="pub-tag tag-meta">Meta Science</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">NeurIPS</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2406.07954" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('debenedetti-24-competition')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">Sahar Abdelnabi, Amr Gomaa, Sarath Sivaprasad, <strong>Lea Schönherr</strong>, Mario Fritz</div>
+    <div class="pub-title">Cooperation, Competition, and Maliciousness: LLM-Stakeholders Interactive Negotiation</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">NeurIPS</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2309.17234.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('abdelnabi-24-negotiation')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block" id="pub-imitation-game">
+  <div class="pub-main">
+    <div class="pub-authors">Bhupendra Acharya, Dario Lazzaro, Efrén López-Morales, Adam Oest, Muhammad Saad, Antonio Emanuele Cinà, <strong>Lea Schönherr</strong>, Thorsten Holz</div>
+    <div class="pub-title">The Imitation Game: Exploring Brand Impersonation Attacks on Social Media Platforms</div>
+    <div class="pub-tags"><a href="#research-deepfakes" class="pub-tag tag-deepfakes">Deepfakes</a> <a href="#research-human" class="pub-tag tag-human">Human Factor</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">USENIX Sec.</span>
+    <div class="pub-links"><a href="https://www.usenix.org/conference/usenixsecurity24/presentation/acharya" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('acharya-24-imitation')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block" id="pub-human-detection">
+  <div class="pub-main">
+    <div class="pub-authors">Joel Frank, Franziska Herbert, Jonas Ricker, <strong>Lea Schönherr</strong>, Thorsten Eisenhofer, Asja Fischer, Markus Dürmuth, Thorsten Holz</div>
+    <div class="pub-title">A Representative Study on Human Detection of Artificially Generated Media Across Countries</div>
+    <div class="pub-tags"><a href="#research-deepfakes" class="pub-tag tag-deepfakes">Deepfakes</a> <a href="#research-human" class="pub-tag tag-human">Human Factor</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">IEEE S&amp;P</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2312.05976.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('frank-24-human')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block" id="pub-crypto-scam">
+  <div class="pub-main">
+    <div class="pub-authors">Bhupendra Acharya, Muhammad Saad, Antonio Emanuele Cinà, <strong>Lea Schönherr</strong>, Hoang Dai Nguyen, Adam Oest, Phani Vadrevu, Thorsten Holz</div>
+    <div class="pub-title">Conning the Crypto Conman: End-to-End Analysis of Cryptocurrency-based Technical Support Scams</div>
+    <div class="pub-tags"><a href="#research-human" class="pub-tag tag-human">Human Factor</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">IEEE S&amp;P</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2401.09824.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('acharya-24-crypto')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block" id="pub-codellmsec">
+  <div class="pub-main">
+    <div class="pub-authors">Hossein Hajipour, Keno Hassler, Thorsten Holz, <strong>Lea Schönherr</strong>, Mario Fritz</div>
+    <div class="pub-title">CodeLMSec Benchmark: Systematically Evaluating and Finding Security Vulnerabilities in Black-Box Code Language Models</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-llm" class="pub-tag tag-code">Code</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">IEEE SaTML</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2302.04012.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('hajipour-24-codellm')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">Gianluca De Stefano, <strong>Lea Schönherr</strong>, Giancarlo Pellegrino</div>
+    <div class="pub-title">RAG and Roll: An End-to-End Evaluation of Indirect Prompt Manipulations in LLM-based Application Frameworks</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">ArXiv</span>
+    <div class="pub-links"><a href="https://arxiv.org/abs/2408.05025" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('destefano-24-rag')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block" id="pub-hexacoder">
+  <div class="pub-main">
+    <div class="pub-authors">Hossein Hajipour, <strong>Lea Schönherr</strong>, Thorsten Holz, Mario Fritz</div>
+    <div class="pub-title">HexaCoder: Secure Code Generation via Oracle-Guided Synthetic Training Data</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-llm" class="pub-tag tag-code">Code</a> <a href="#research-attacksdefenses" class="pub-tag tag-defense">Defense</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">ArXiv</span>
+    <div class="pub-links"><a href="https://arxiv.org/abs/2409.06446" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('hajipour-24-hexacoder')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <h3 class="year-heading">2023</h3>
+
+    <div class="pub-block" id="pub-model-stealing">
+  <div class="pub-main">
+    <div class="pub-authors">David Pape, Sina Däubener, Thorsten Eisenhofer, Antonio Emanuele Cinà, <strong>Lea Schönherr</strong></div>
+    <div class="pub-title">On the Limitations of Model Stealing with Uncertainty Quantification Models</div>
+    <div class="pub-tags"><a href="#research-attacksdefenses" class="pub-tag tag-adversarial">Adversarial ML</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">ESANN</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2305.05293.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('pape-23-uncertainty')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">Nico Schiller, Merlin Chlosta, Moritz Schloegel, Nils Bars, Thorsten Eisenhofer, Tobias Scharnowski, Felix Domke, <strong>Lea Schönherr</strong>, Thorsten Holz</div>
+    <div class="pub-title">Drone Security and the Mysterious Case of DJI's DroneID</div>
+    <div class="pub-tags"><a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+      </div>
+  <div class="pub-right">
+    <span class="venue-badge">NDSS</span>
+    <div class="pub-links"><a href="https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_f217_paper.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('schiller-23-drone')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block" id="pub-venomave">
+  <div class="pub-main">
+    <div class="pub-authors">Hojjat Aghakhani, Thorsten Eisenhofer, <strong>Lea Schönherr</strong>, Dorothea Kolossa, Thorsten Holz, Christopher Kruegel, Giovanni Vigna</div>
+    <div class="pub-title">VENOMAVE: Clean-Label Poisoning Against Speech Recognition</div>
+    <div class="pub-tags"><a href="#research-speech" class="pub-tag tag-speech">Speech &amp; Audio</a> <a href="#research-attacksdefenses" class="pub-tag tag-adversarial">Adversarial ML</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">IEEE SaTML</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2010.10682.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('aghakhani-23-venomave')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <h3 class="year-heading">2022</h3>
+
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">Timm Koppelmann, Luca Becker, Alexandru Nelus, Rene Glitza, <strong>Lea Schönherr</strong>, Rainer Martin</div>
+    <div class="pub-title">Clustering-based Wake Word Detection in Privacy-aware Acoustic Sensor Networks</div>
+    <div class="pub-tags"><a href="#research-speech" class="pub-tag tag-speech">Speech &amp; Audio</a> <a href="#research-attacksdefenses" class="pub-tag tag-privacy">Privacy</a> <a href="#research-attacksdefenses" class="pub-tag tag-defense">Defense</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">INTERSPEECH</span>
+    <div class="pub-links"> <a href="media/paper/2022_interspeech.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('koppelmann-22-privacy')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block" id="pub-accidental-triggers">
+  <div class="pub-main">
+    <div class="pub-authors"><strong>Lea Schönherr</strong>, Maximilian Golla, Thorsten Eisenhofer, Jan Wiele, Dorothea Kolossa, Thorsten Holz</div>
+    <div class="pub-title">Exploring Accidental Triggers of Smart Speakers</div>
+    <div class="pub-tags"><a href="#research-speech" class="pub-tag tag-speech">Speech &amp; Audio</a> <a href="#research-attacksdefenses" class="pub-tag tag-privacy">Privacy</a> <a href="#research-human" class="pub-tag tag-human">Human Factor</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">Comp. Speech Lang.</span>
+    <div class="pub-links"> <a href="media/paper/2022_csl.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('schoenherr-22-unacceptable')">[BibTeX]</a> <a href="https://unacceptable-privacy.github.io/" target="_blank" rel="noopener">[Website]</a></div>
+  </div>
+</div>
+
+    <h3 class="year-heading">2021</h3>
+
+    <div class="pub-block" id="pub-wavefake">
+  <div class="pub-main">
+    <div class="pub-authors">Joel Frank, <strong>Lea Schönherr</strong></div>
+    <div class="pub-title">WaveFake: A Data Set to Facilitate Audio DeepFake Detection</div>
+    <div class="pub-tags"><a href="#research-speech" class="pub-tag tag-speech">Speech &amp; Audio</a> <a href="#research-deepfakes" class="pub-tag tag-deepfakes">Deepfakes</a> <a href="#research-attacksdefenses" class="pub-tag tag-defense">Defense</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">NeurIPS</span>
+    <div class="pub-links"> <a href="media/paper/2021_neurips.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('frank-21-wavefake')">[BibTeX]</a> <a href="https://github.com/RUB-SysSec/wavefake" target="_blank" rel="noopener">[Code]</a> <a href="https://www.youtube.com/watch?v=v2pAVp2NUQM" target="_blank" rel="noopener">[Talk]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block" id="pub-dompteur">
+  <div class="pub-main">
+    <div class="pub-authors">Thorsten Eisenhofer, <strong>Lea Schönherr</strong>, Joel Frank, Lars Speckemeier, Dorothea Kolossa, Thorsten Holz</div>
+    <div class="pub-title">Dompteur: Taming Audio Adversarial Examples</div>
+    <div class="pub-tags"><a href="#research-speech" class="pub-tag tag-speech">Speech &amp; Audio</a> <a href="#research-attacksdefenses" class="pub-tag tag-adversarial">Adversarial ML</a> <a href="#research-attacksdefenses" class="pub-tag tag-defense">Defense</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">USENIX Sec.</span>
+    <div class="pub-links"> <a href="media/paper/2021_usenix.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('eisenhofer-21-dompteur')">[BibTeX]</a> <a href="https://github.com/RUB-SysSec/dompteur" target="_blank" rel="noopener">[Code]</a> <a href="https://www.youtube.com/watch?v=v2pAVp2NUQM" target="_blank" rel="noopener">[Talk]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">Timm Koppelmann, Alexandru Nelus, <strong>Lea Schönherr</strong>, Dorothea Kolossa, Rainer Martin</div>
+    <div class="pub-title">Privacy-Preserving Feature Extraction for Cloud-Based Wake Word Verification</div>
+    <div class="pub-tags"><a href="#research-speech" class="pub-tag tag-speech">Speech &amp; Audio</a> <a href="#research-attacksdefenses" class="pub-tag tag-privacy">Privacy</a> <a href="#research-attacksdefenses" class="pub-tag tag-defense">Defense</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">INTERSPEECH</span>
+    <div class="pub-links"> <a href="media/paper/2021_interspeech.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('koppelmann-21-privacy')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <h3 class="year-heading">2020</h3>
+
+    <div class="pub-block" id="pub-frequency">
+  <div class="pub-main">
+    <div class="pub-authors">Joel Frank, Thorsten Eisenhofer, <strong>Lea Schönherr</strong>, Asja Fischer, Dorothea Kolossa, Thorsten Holz</div>
+    <div class="pub-title">Leveraging Frequency Analysis for Deep Fake Image Recognition</div>
+    <div class="pub-tags"><a href="#research-deepfakes" class="pub-tag tag-deepfakes">Deepfakes</a> <a href="#research-attacksdefenses" class="pub-tag tag-defense">Defense</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">ICML</span>
+    <div class="pub-links"> <a href="media/paper/2020_icml.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('frank-20-frequency')">[BibTeX]</a> <a href="https://github.com/RUB-SysSec/GANDCTAnalysis" target="_blank" rel="noopener">[Code]</a> <a href="https://slideslive.com/s/joel-frank-30731" target="_blank" rel="noopener">[Talk]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block" id="pub-imperio">
+  <div class="pub-main">
+    <div class="pub-authors"><strong>Lea Schönherr</strong>, Thorsten Eisenhofer, Steffen Zeiler, Thorsten Holz, Dorothea Kolossa</div>
+    <div class="pub-title">Imperio: Robust Over-the-Air Adversarial Examples for Automatic Speech Recognition Systems</div>
+    <div class="pub-tags"><a href="#research-speech" class="pub-tag tag-speech">Speech &amp; Audio</a> <a href="#research-attacksdefenses" class="pub-tag tag-adversarial">Adversarial ML</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">ACSAC</span>
+    <div class="pub-links"> <a href="media/paper/2020_acsac.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('schoenherr-20-imperio')">[BibTeX]</a> <a href="https://www.youtube.com/watch?v=bC0D0b-wtlE" target="_blank" rel="noopener">[Talk]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">Sina Däubener, <strong>Lea Schönherr</strong>, Asja Fischer, Dorothea Kolossa</div>
+    <div class="pub-title">Detecting Adversarial Examples for Speech Recognition via Uncertainty Quantification</div>
+    <div class="pub-tags"><a href="#research-speech" class="pub-tag tag-speech">Speech &amp; Audio</a> <a href="#research-attacksdefenses" class="pub-tag tag-adversarial">Adversarial ML</a> <a href="#research-attacksdefenses" class="pub-tag tag-defense">Defense</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">INTERSPEECH</span>
+    <div class="pub-links"> <a href="media/paper/2020_interspeech.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('daeubener-20-uncertainty')">[BibTeX]</a> <a href="https://github.com/rub-ksv/uncertaintyASR" target="_blank" rel="noopener">[Code]</a></div>
+  </div>
+</div>
+
+    <h3 class="year-heading">2016 – 2019</h3>
+
+    <div class="pub-block" id="pub-psychoacoustic">
+  <div class="pub-main">
+    <div class="pub-authors"><strong>Lea Schönherr</strong>, Katharina Kohls, Steffen Zeiler, Thorsten Holz, Dorothea Kolossa</div>
+    <div class="pub-title">Adversarial Attacks Against Automatic Speech Recognition Systems via Psychoacoustic Hiding</div>
+    <div class="pub-tags"><a href="#research-speech" class="pub-tag tag-speech">Speech &amp; Audio</a> <a href="#research-attacksdefenses" class="pub-tag tag-adversarial">Adversarial ML</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">NDSS</span>
+    <div class="pub-links"> <a href="media/paper/2019_ndss.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('schoenherr-19-psychoacoustic')">[BibTeX]</a> <a href="https://adversarial-attacks.net/" target="_blank" rel="noopener">[Website]</a> <a href="https://github.com/lealeasch/adversarialattacks" target="_blank" rel="noopener">[Code]</a> <a href="https://www.youtube.com/watch?v=l_AkXxZt10I" target="_blank" rel="noopener">[Talk]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors"><strong>Lea Schönherr</strong>, Dennis Orth, Martin Heckmann, Dorothea Kolossa</div>
+    <div class="pub-title">Environmentally Robust Audio-Visual Speaker Identification</div>
+    <div class="pub-tags"><a href="#research-speech" class="pub-tag tag-speech">Speech &amp; Audio</a> <a href="#research-attacksdefenses" class="pub-tag tag-defense">Defense</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">SLT 2016</span>
+    <div class="pub-links"><a href="media/paper/2016_slt.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('schoenherr-20-imperio')">[BibTeX]</a></div>
+  </div>
+</div>
+
+  </section>
+
+  <!-- Talks -->
+  <section id="talks">
+    <h2>Talks</h2>
+
+    <div class="talk-block">
+      <div class="talk-year">2026</div>
+      <div class="talk-body">
+        <img class="talk-thumb" src="media/talks/2026-uct.png" alt="UCT-CISPA Summer School 2026">
+        <div>
+          <div class="talk-title">"Can We Trust Generative AI? Understanding and Mitigating Security Threats in Today's Machine Learning Systems"</div>
+          <div class="talk-venue">UCT-CISPA Summer School — Cape Town, South Africa</div>
+          <div class="talk-desc">Generative AI is becoming more integrated into our daily lives, raising questions about potential threats. This talk examines security challenges including deception of humans with generated media, exploits of LLMs to bypass content filters or leak sensitive information, and methods to protect intellectual property through prompt obfuscation.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-block">
+      <div class="talk-year">2025</div>
+      <div class="talk-body">
+        <img class="talk-thumb" src="media/talks/2025-vienna.png" alt="Summer School Vienna 2025">
+        <div>
+          <div class="talk-title">"Can We Trust Generative AI? Understanding and Mitigating Security Threats in Today's Machine Learning Systems"</div>
+          <div class="talk-venue">Summer School on AI and Cybersecurity — Vienna, Austria</div>
+          <div class="talk-desc">An invited lecture surveying the security landscape of modern generative AI—from adversarial manipulation of speech and image models to misuse of LLMs for bypassing content filters or leaking private information. Covers both the threat surface and emerging defenses including prompt obfuscation and synthetic media detection.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-block">
+      <div class="talk-year">2025</div>
+      <div class="talk-body">
+        <img class="talk-thumb" src="media/talks/2025-sardinia.png" alt="SERICS Summer School Cagliari 2025">
+        <div>
+          <div class="talk-title">"Can We Trust Generative AI? Understanding and Mitigating Security Threats in Today's Machine Learning Systems"</div>
+          <div class="talk-venue">SERICS Summer School — Cagliari, Italy</div>
+          <div class="talk-desc">An invited lecture surveying the security landscape of modern generative AI—from adversarial manipulation of speech and image models to misuse of LLMs for bypassing content filters or leaking private information. Covers both the threat surface and emerging defenses including prompt obfuscation and synthetic media detection.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-block">
+      <div class="talk-year">2024</div>
+      <div class="talk-body">
+        <img class="talk-thumb" src="media/talks/2024_hida_small.jpg" alt="AISec @ ACM CCS 2024">
+        <div>
+          <div class="talk-title">"Challenges and Threats in Generative AI: Misuse and Exploits" <span class="talk-keynote">Keynote</span></div>
+          <div class="talk-venue">AISec @ ACM CCS 2024</div>
+          <div class="talk-desc">Keynote surveying the expanding threat landscape of generative AI—from adversarial examples and synthetic media to modern misuse of LLMs through prompt injection, jailbreaks, and confidentiality attacks. Discusses how generative models can be exploited to bypass safety mechanisms and what principled defenses look like.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-block">
+      <div class="talk-year">2024</div>
+      <div class="talk-body">
+        <a href="https://youtu.be/mKCMmAP__hk" target="_blank" rel="noopener"><img class="talk-thumb" src="media/talks/2024_hida_small.jpg" alt="HIDA Lecture Series 2024"></a>
+        <div>
+          <div class="talk-title">"Challenges and Threats in Generative AI: Misuse and Exploits"</div>
+          <div class="talk-venue">HIDA Lecture Series on AI and LLMs</div>
+          <div class="talk-desc">An invited lecture in the HIDA series covering the dual challenge of generative AI security: how these models can be exploited through prompt injection and confidentiality attacks, and how they can be misused to generate synthetic media for deception. Draws on work spanning LLMs, code models, and multimodal systems.</div>
+          <div class="talk-links"><a href="https://youtu.be/mKCMmAP__hk" target="_blank" rel="noopener">[Video]</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-block">
+      <div class="talk-year">2024</div>
+      <div class="talk-body">
+        <a href="https://www.youtube.com/watch?v=T5Yh3Sj4hFU" target="_blank" rel="noopener"><img class="talk-thumb" src="media/talks/2024-satml.png" alt="SaTML 2024"></a>
+        <div>
+          <div class="talk-title">"CodeLMSec: Systematically Evaluating and Finding Security Vulnerabilities in Black-Box Code Language Models"</div>
+          <div class="talk-venue">IEEE Conference on Secure and Trustworthy Machine Learning (SaTML) 2024</div>
+          <div class="talk-desc">Code language models can silently generate vulnerable code. This talk presents CodeLMSec, a benchmark for systematically evaluating security vulnerabilities in black-box code LMs by using the first lines of vulnerable code examples as prompts to elicit completions.</div>
+          <div class="talk-links"><a href="https://www.youtube.com/watch?v=T5Yh3Sj4hFU" target="_blank" rel="noopener">[Video]</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-block">
+      <div class="talk-year">2023</div>
+      <div class="talk-body">
+        <img class="talk-thumb" src="media/talks/2023-icml_small.jpg" alt="AdvML-Frontiers @ ICML 2023">
+        <div>
+          <div class="talk-title">"Brave New World: Challenges and Threats in Multimodal AI Agent Integrations" <span class="talk-keynote">Keynote</span></div>
+          <div class="talk-venue">AdvML-Frontiers @ ICML 2023</div>
+          <div class="talk-desc">Keynote exploring the new security challenges that arise when AI systems can perceive and act across multiple modalities. As language, vision, and audio models are integrated into autonomous agents, the attack surface expands dramatically—this talk maps these emerging threats and the open research questions they raise.</div>
+          <div class="talk-links"><a href="https://advml-frontier.github.io" target="_blank" rel="noopener">[Website]</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-block">
+      <div class="talk-year">2021</div>
+      <div class="talk-body">
+        <a href="https://www.youtube.com/watch?v=mD7dxsynP2A" target="_blank" rel="noopener"><img class="talk-thumb" src="media/talks/2021_isca_small.jpg" alt="ISCA SIGML 2021"></a>
+        <div>
+          <div class="talk-title">"Adversarially Robust Speech Recognition"</div>
+          <div class="talk-venue">ISCA SIGML Seminar Series</div>
+          <div class="talk-desc">An invited talk in the ISCA SIGML seminar series covering the state of adversarial robustness in speech recognition. Topics span psychoacoustic attacks, physical over-the-air perturbations, and poisoning of audio models, alongside defenses including perceptually-constrained adversarial training and uncertainty quantification for attack detection.</div>
+          <div class="talk-links"><a href="https://www.youtube.com/watch?v=mD7dxsynP2A" target="_blank" rel="noopener">[Video]</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-block">
+      <div class="talk-year">2020</div>
+      <div class="talk-body">
+        <a href="https://youtu.be/3498p86OhYI?t=2652" target="_blank" rel="noopener"><img class="talk-thumb" src="media/talks/2020_rc3_small.jpg" alt="rC3 2020"></a>
+        <div>
+          <div class="talk-title">"Alexa, who else is listening?"</div>
+          <div class="talk-venue">rC3 (Remote Chaos Experience)</div>
+          <div class="talk-desc">A talk at the Remote Chaos Experience exploring the privacy risks of always-on smart speakers. Examines how devices like Amazon Alexa can be triggered accidentally by ambient sounds, TV speech, or phonetically similar words—and what this means for the privacy of everyday conversations in the home.</div>
+          <div class="talk-links"><a href="https://youtu.be/3498p86OhYI?t=2652" target="_blank" rel="noopener">[Video]</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-block">
+      <div class="talk-year">2020</div>
+      <div class="talk-body">
+        <a href="https://www.youtube.com/watch?v=bC0D0b-wtlE" target="_blank" rel="noopener"><img class="talk-thumb" src="media/talks/2020_acsac_small.jpg" alt="ACSAC 2020"></a>
+        <div>
+          <div class="talk-title">"Imperio: Robust Over-the-Air Adversarial Examples for Automatic Speech Recognition Systems"</div>
+          <div class="talk-venue">ACSAC 2020</div>
+          <div class="talk-desc">Presents Imperio, a method for crafting adversarial audio examples that remain effective when played over the air in real physical environments. Unlike prior work that assumes white-box access, Imperio accounts for acoustic room transfer functions to achieve robust ASR manipulation at a distance.</div>
+          <div class="talk-links"><a href="https://www.youtube.com/watch?v=bC0D0b-wtlE" target="_blank" rel="noopener">[Video]</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-block">
+      <div class="talk-year">2019</div>
+      <div class="talk-body">
+        <a href="https://www.youtube.com/watch?v=l_AkXxZt10I" target="_blank" rel="noopener"><img class="talk-thumb" src="media/talks/2019_ndss_small.jpg" alt="NDSS 2019"></a>
+        <div>
+          <div class="talk-title">"Adversarial Attacks Against ASR Systems via Psychoacoustic Hiding"</div>
+          <div class="talk-venue">NDSS 2019</div>
+          <div class="talk-desc">Demonstrates that adversarial audio attacks on speech recognition can be made imperceptible to humans using psychoacoustic masking—hiding malicious commands below the threshold of human hearing while still fooling ASR systems. One of the first works to bring psychoacoustic principles into the adversarial ML setting.</div>
+          <div class="talk-links"><a href="https://www.youtube.com/watch?v=l_AkXxZt10I" target="_blank" rel="noopener">[Video]</a></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Press -->
+  <section id="press">
+    <h2>Press</h2>
+
+    <p class="press-section-label">Selected highlights</p>
+    <div class="press-featured">
+      <div>
+        <div class="press-fi-date">June 2025</div>
+        <a class="press-fi-title" href="https://www1.wdr.de/nachrichten/nah-dran-cybermafia-doku-100.html" target="_blank" rel="noopener">Onlinebetrug und moderne Sklaverei: Die Methoden der Cybermafia</a>
+        <div class="press-fi-outlet">WDR nah dran</div>
+      </div>
+      <div>
+        <div class="press-fi-date">June 2024</div>
+        <a class="press-fi-title" href="https://www.radioeins.de/programm/sendungen/die_profis/archivierte_sendungen/beitraege/warum-menschen-ki-erstellte-inhalte-haeufig-nicht-mehr-erkennen-.html" target="_blank" rel="noopener">Warum Menschen KI-erstellte Inhalte häufig nicht mehr erkennen</a>
+        <div class="press-fi-outlet">radio eins rbb</div>
+      </div>
+      <div>
+        <div class="press-fi-date">March 2023</div>
+        <a class="press-fi-title" href="https://www.wired.com/story/ai-voice-deep-fakes/" target="_blank" rel="noopener">AI-Generated Voice Deepfakes Aren't Scary Good — Yet</a>
+        <div class="press-fi-outlet">Wired</div>
+      </div>
+      <div>
+        <div class="press-fi-date">July 2020</div>
+        <a class="press-fi-title" href="https://www.thetimes.co.uk/article/not-in-front-of-the-speaker-words-that-wake-up-alexa-sjgslqrbr" target="_blank" rel="noopener">Not in front of the speaker! Words that wake up Alexa</a>
+        <div class="press-fi-outlet">The Times</div>
+      </div>
+      <div>
+        <div class="press-fi-date">Dec 2020</div>
+        <a class="press-fi-title" href="https://media.ccc.de/v/rc3-466940-alexa_who_else_is_listening" target="_blank" rel="noopener">Alexa, Who Else Is Listening?</a>
+        <div class="press-fi-outlet">Remote Chaos Experience</div>
+      </div>
+      <div>
+        <div class="press-fi-date">2020</div>
+        <div class="press-fi-title">Sprachassistenten hören mit</div>
+        <div class="press-fi-outlet">ARD Tagesthemen</div>
+      </div>
+    </div>
+
+    <p class="press-section-label" style="margin-top: 1.5rem;">More coverage</p>
+    <div class="press-plain-list">
+      <a class="press-plain-item" href="https://www.ndr.de/podcast/die-scamming-mafia-ki-und-moderne-sklaverei-11km-classic,audio-2884584.html" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">NDR 11km</span>
+        <span class="press-pi-title">Die Scamming-Mafia: KI und moderne Sklaverei</span>
+        <span class="press-pi-date">Jun 2025</span>
+      </a>
+      <a class="press-plain-item" href="https://www.handelsblatt.com/technik/it-internet/cyberkriminalitaet-wie-der-enkeltrick-nur-mit-ki-deepfake-betrueger-erpressen-firmen-mit-falscher-chef-stimme/28003742.html" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Handelsblatt</span>
+        <span class="press-pi-title">Wie der Enkeltrick, nur mit KI: Deepfake-Betrüger erpressen Firmen mit falscher Chef-Stimme</span>
+        <span class="press-pi-date">Mar 2022</span>
+      </a>
+      <a class="press-plain-item" href="https://www.srf.ch/play/tv/nzz-format/video/unsere-daten-im-netz-ende-der-privatheit?urn=urn:srf:video:d33a944c-bd38-4ad7-8a1d-8e2986d73f68" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">NZZ / SRF</span>
+        <span class="press-pi-title">Unsere Daten im Netz: Ende der Privatheit</span>
+        <span class="press-pi-date">Jan 2022</span>
+      </a>
+      <a class="press-plain-item" href="https://tc.chat/are-you-accidentally-waking-up-your-smart-devices/" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Tech Conversationalist</span>
+        <span class="press-pi-title">Are you accidentally 'waking up' your smart devices?</span>
+        <span class="press-pi-date">Jun 2021</span>
+      </a>
+      <a class="press-plain-item" href="https://www.zdf.de/kinder/logo/kinderreporterin-greta-deep-fake-app-100.html" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">ZDF logo!</span>
+        <span class="press-pi-title">Erkennt Greta Deep Fakes?</span>
+        <span class="press-pi-date">Sep 2020</span>
+      </a>
+      <a class="press-plain-item" href="https://www.spektrum.de/news/mathematische-analyse-soll-alle-deep-fakes-enttarnen/1752250" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Spektrum.de</span>
+        <span class="press-pi-title">Mathematische Analyse soll alle Deep Fakes enttarnen</span>
+        <span class="press-pi-date">Jul 2020</span>
+      </a>
+      <a class="press-plain-item" href="https://www.vdi-nachrichten.com/technik/informationstechnik/frequenzanalyse-enttarnt-fake-bilder/" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">VDI Nachrichten</span>
+        <span class="press-pi-title">Frequenzanalyse enttarnt Fake-Bilder</span>
+        <span class="press-pi-date">Jul 2020</span>
+      </a>
+      <a class="press-plain-item" href="https://scitechdaily.com/using-frequency-analysis-to-identify-deep-fake-images/" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">SciTech Daily</span>
+        <span class="press-pi-title">Which Face is Real? Using Frequency Analysis to Identify "Deep-Fake" Images</span>
+        <span class="press-pi-date">Jul 2020</span>
+      </a>
+      <a class="press-plain-item" href="https://www.electronicsweekly.com/news/research-news/frequency-analysis-can-help-reveal-deep-fake-images-2020-07/" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Electronics Weekly</span>
+        <span class="press-pi-title">Frequency analysis can help reveal deep fake images</span>
+        <span class="press-pi-date">Jul 2020</span>
+      </a>
+      <a class="press-plain-item" href="https://www.zdf.de/kinder/logo/alexa-siri-lautsprecher-mithoeren-100.html" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">ZDF logo!</span>
+        <span class="press-pi-title">Hat Siri schlechte Ohren?</span>
+        <span class="press-pi-date">Jul 2020</span>
+      </a>
+      <a class="press-plain-item" href="https://detektor.fm/digital/zurueck-zum-thema-smart-speaker-und-datenschutz" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">detektor.fm</span>
+        <span class="press-pi-title">Alexa, spionierst du mich aus?</span>
+        <span class="press-pi-date">Jul 2020</span>
+      </a>
+      <div class="press-plain-item">
+        <span class="press-pi-outlet">Mitteldeutscher Rundfunk</span>
+        <span class="press-pi-title">Wann hören Sprachassistenten mit?</span>
+        <span class="press-pi-date">Jul 2020</span>
+      </div>
+      <a class="press-plain-item" href="https://voicebot.ai/2020/07/06/more-than-1000-phrases-will-accidentally-awaken-alexa-siri-and-google-assistant-study/" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">voicebot.ai</span>
+        <span class="press-pi-title">More than 1,000 Phrases Will Accidentally Awaken Alexa, Siri, and Google Assistant</span>
+        <span class="press-pi-date">Jul 2020</span>
+      </a>
+      <div class="press-plain-item">
+        <span class="press-pi-outlet">Hessischer Rundfunk</span>
+        <span class="press-pi-title">Immer ganz Ohr – Lauschangriff der Sprachassistenten</span>
+        <span class="press-pi-date">Jul 2020</span>
+      </div>
+      <a class="press-plain-item" href="https://www.mpg.de/15183736/networked-loudspeakers-language-assistant-activation" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Max Planck Society</span>
+        <span class="press-pi-title">Uninvited listeners in your speakers</span>
+        <span class="press-pi-date">Jul 2020</span>
+      </a>
+      <a class="press-plain-item" href="https://www.youtube.com/watch?v=BBkXKPfvyBI" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">STRG_F (NDR)</span>
+        <span class="press-pi-title">Smart Speaker: Wobei Alexa, Siri &amp; Co. heimlich mithören</span>
+        <span class="press-pi-date">Jun 2020</span>
+      </a>
+      <a class="press-plain-item" href="https://www.tagesschau.de/multimedia/video/video-723205.html" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Tagesthemen</span>
+        <span class="press-pi-title">Sprachassistenten hören mit</span>
+        <span class="press-pi-date">Jun 2020</span>
+      </a>
+      <a class="press-plain-item" href="https://www.tagesschau.de/investigativ/ndr/smart-speaker-101.html" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">tagesschau.de</span>
+        <span class="press-pi-title">Die lauschenden Lautsprecher</span>
+        <span class="press-pi-date">Jun 2020</span>
+      </a>
+      <a class="press-plain-item" href="https://projekte.sueddeutsche.de/artikel/digital/smartspeaker-alexa-und-co-lauschen-versehentlich-e793169/?reduced=true" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Süddeutsche Zeitung</span>
+        <span class="press-pi-title">Wenn Alexa aus Versehen lauscht</span>
+        <span class="press-pi-date">Jun 2020</span>
+      </a>
+      <div class="press-plain-item">
+        <span class="press-pi-outlet">Norddeutscher Rundfunk</span>
+        <span class="press-pi-title">Wenn der smarte Lautsprecher mit dem Tatort-Kommissar spricht</span>
+        <span class="press-pi-date">Jun 2020</span>
+      </div>
+      <a class="press-plain-item" href="https://www.fastcompany.com/90524070/tired-of-saying-hey-google-and-alexa-change-it-up-with-these-unintentional-wake-words" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Fast Company</span>
+        <span class="press-pi-title">Tired of saying 'Hey Google' and 'Alexa'? Change it up with these unintentional wake words</span>
+        <span class="press-pi-date">Jul 2020</span>
+      </a>
+      <a class="press-plain-item" href="https://www.fastcompany.com/90240975/alexa-can-be-hacked-by-chirping-birds" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Fast Company</span>
+        <span class="press-pi-title">Alexa can be hacked — by chirping birds</span>
+        <span class="press-pi-date">Sep 2018</span>
+      </a>
+      <a class="press-plain-item" href="https://www.deutschlandfunk.de/sicherheitsluecken-bei-sprachassistenzsystemen-alexa-hoert-100.html" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Deutschlandfunk</span>
+        <span class="press-pi-title">Sicherheitslücken bei Sprachassistenzsystemen — Alexa hört anders als ein Mensch</span>
+        <span class="press-pi-date">Oct 2018</span>
+      </a>
+      <a class="press-plain-item" href="https://www.digitaltrends.com/home/voice-assistants-hacked-adverserial-attack-birds-chirping-alexa/" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Digital Trends</span>
+        <span class="press-pi-title">Research finds the sound of chirping birds can be used to hack Alexa</span>
+        <span class="press-pi-date">Oct 2018</span>
+      </a>
+      <a class="press-plain-item" href="https://eandt.theiet.org/content/articles/2018/09/smart-speaker-hack-could-trigger-secret-messages-hidden-in-audio-files/" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">E&amp;T Engineering and Technology</span>
+        <span class="press-pi-title">Smart speaker hack could trigger secret messages hidden in audio files</span>
+        <span class="press-pi-date">Sep 2018</span>
+      </a>
+      <a class="press-plain-item" href="https://phys.org/news/2018-09-secret-messages-alexa.amp" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">phys.org</span>
+        <span class="press-pi-title">Secret messages for Alexa and Co</span>
+        <span class="press-pi-date">Sep 2018</span>
+      </a>
+      <a class="press-plain-item" href="https://m.focus.de/digital/digital-news/siri-alexa-und-co-geheime-botschaften-fuer-alexa-und-co_id_9654609.html" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Focus online</span>
+        <span class="press-pi-title">Geheime Botschaften für Alexa und Co.</span>
+        <span class="press-pi-date">Sep 2018</span>
+      </a>
+      <a class="press-plain-item" href="https://www.trendsderzukunft.de/fuer-menschen-nicht-hoerbar-forscher-verstecken-geheime-befehle-in-alexa-und-co/" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Trends der Zukunft</span>
+        <span class="press-pi-title">Für Menschen nicht hörbar: Forscher verstecken geheime Befehle in Alexa und Co</span>
+        <span class="press-pi-date">Sep 2018</span>
+      </a>
+      <a class="press-plain-item" href="https://www.socialon.de/2018/09/24/it-sicherheit-geheime-botschaften-fuer-alexa-und-co/" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">social ON</span>
+        <span class="press-pi-title">IT-Sicherheit: Geheime Botschaften für Alexa und Co.</span>
+        <span class="press-pi-date">Sep 2018</span>
+      </a>
+      <a class="press-plain-item" href="https://www.handelsblatt.com/technik/it-internet/forscher-manipulieren-sprachassistenten-geheime-botschaften-fuer-alexa-und-siri/23110106.html" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Handelsblatt</span>
+        <span class="press-pi-title">Manipulieren Sprachassistenten geheime Botschaften für Alexa und Siri</span>
+        <span class="press-pi-date">Sep 2018</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Teaching -->
+  <section id="teaching">
+    <h2>Teaching</h2>
+
+    <div class="teaching-block">
+      <div class="teaching-year">Summer 2026</div>
+      <div>
+        <div class="teaching-name">Trustworthy Machine Learning</div>
+        <div class="teaching-tags">
+          <span class="teaching-type-tag">Master</span>
+          <span class="teaching-type-tag">Lecture</span>
+          <span class="teaching-loc-tag">University of Hamburg</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="teaching-block">
+      <div class="teaching-year">Summer 2025</div>
+      <div>
+        <div class="teaching-name">Trustworthy Machine Learning</div>
+        <div class="teaching-tags">
+          <span class="teaching-type-tag">Master</span>
+          <span class="teaching-type-tag">Lecture</span>
+          <span class="teaching-loc-tag">University of Hamburg</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="teaching-block">
+      <div class="teaching-year">Winter 2025</div>
+      <div>
+        <div class="teaching-name">Trustworthy Agentic Systems</div>
+        <div class="teaching-tags">
+          <span class="teaching-type-tag">Master</span>
+          <span class="teaching-type-tag">Seminar</span>
+          <span class="teaching-loc-tag">Saarland University</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="teaching-block">
+      <div class="teaching-year">Summer 2024</div>
+      <div>
+        <div class="teaching-name">Trustworthy Generative Machine Learning</div>
+        <div class="teaching-tags">
+          <span class="teaching-type-tag">Bachelor</span>
+          <span class="teaching-type-tag">Seminar</span>
+          <span class="teaching-loc-tag">Saarland University</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="teaching-block">
+      <div class="teaching-year">Winter 2023</div>
+      <div>
+        <div class="teaching-name">Machine Learning Security Reproducibility</div>
+        <div class="teaching-tags">
+          <span class="teaching-type-tag">Master</span>
+          <span class="teaching-type-tag">Seminar</span>
+          <span class="teaching-loc-tag">Saarland University</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="teaching-block">
+      <div class="teaching-year">2022 – 2023</div>
+      <div>
+        <div class="teaching-name">Machine Learning and Security</div>
+        <div class="teaching-tags">
+          <span class="teaching-type-tag">Master</span>
+          <span class="teaching-type-tag">Seminar</span>
+          <span class="teaching-loc-tag">Saarland University</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-text">Lea Schönherr · CISPA Helmholtz Center for Information Security</span>
+    <div class="footer-links">
+      <a href="mailto:schoenherr@cispa.de">Email</a>
+      <a href="https://scholar.google.com/citations?user=DtLfiGoAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+      <a href="https://dormantneurons.science" target="_blank" rel="noopener">Research Group</a>
+      <a href="https://cispa.de/de/people/c01lesc" target="_blank" rel="noopener">CISPA</a>
+      <a href="#" onclick="showImpressum(); return false;">Impressum</a>
+    </div>
   </div>
 </footer>
 
+<!-- BibTeX overlay -->
+<div id="bibtex-overlay" onclick="hideBibtex()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.45); z-index:1000;">
+  <div onclick="event.stopPropagation()" style="position:relative; margin:12% auto; width:min(600px,90%); background:var(--modal-bg); border:2px solid var(--hive-yellow); border-radius:10px; padding:1.75rem 2rem;">
+    <button onclick="hideBibtex()" style="position:absolute; top:0.75rem; right:0.9rem; background:none; border:none; font-size:1.3rem; cursor:pointer; color:#7a4e00; line-height:1;">&#x2715;</button>
+    <button id="bibtex-copy-btn" onclick="copyBibtex()" title="Copy BibTeX" style="position:absolute; top:0.7rem; right:2.6rem; background:none; border:1px solid var(--badge-border); border-radius:4px; cursor:pointer; color:#7a4e00; padding:0.3rem 0.4rem; line-height:0; display:flex; align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+    <pre id="bibtex-content" style="font-family:monospace; font-size:0.82rem; white-space:pre-wrap; color:#1a1a1a; margin:0; line-height:1.6;"></pre>
+  </div>
+</div>
+
+<script>
+function showBibtex(key) {
+  var raw = bibtex[key] || '';
+  var text = raw
+    .replace(/<br>/gi, '\n')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
+  document.getElementById('bibtex-content').textContent = text;
+  var btn = document.getElementById('bibtex-copy-btn');
+  btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>'; btn.style.color = '#7a4e00'; btn.style.borderColor = 'var(--badge-border)';
+  document.getElementById('bibtex-overlay').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function copyBibtex() {
+  var text = document.getElementById('bibtex-content').textContent;
+  var checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+  var copySvg = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+  navigator.clipboard.writeText(text).then(function() {
+    var btn = document.getElementById('bibtex-copy-btn');
+    btn.innerHTML = checkSvg;
+    btn.style.color = var(--copy-success);
+    btn.style.borderColor = var(--copy-success);
+    setTimeout(function() { btn.innerHTML = copySvg; btn.style.color = '#7a4e00'; btn.style.borderColor = 'var(--badge-border)'; }, 2000);
+  });
+}
+function hideBibtex() {
+  document.getElementById('bibtex-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function showImpressum() {
+  document.getElementById('impressum-overlay').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function hideImpressum() {
+  document.getElementById('impressum-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') { hideBibtex(); hideImpressum(); }
+});
+
+document.querySelectorAll('a.pub-tag[href^="#research-"]').forEach(function(link) {
+  link.addEventListener('click', function() {
+    var area = document.getElementById(this.getAttribute('href').slice(1));
+    if (!area) return;
+    area.classList.remove('highlight');
+    void area.offsetWidth;
+    area.classList.add('highlight');
+    setTimeout(function() { area.classList.remove('highlight'); }, 1600);
+  });
+});
+
+(function() {
+  var hamburger = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.tabs-nav');
+  if (!hamburger || !nav) return;
+  hamburger.addEventListener('click', function() {
+    var open = nav.classList.toggle('nav-open');
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    hamburger.textContent = open ? '✕' : '☰';
+  });
+  nav.querySelectorAll('.tabs-nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      nav.classList.remove('nav-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.textContent = '☰';
+    });
+  });
+})();
+</script>
+
+<!-- Impressum overlay -->
+<div id="impressum-overlay" onclick="hideImpressum()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.45); z-index:1000;">
+  <div onclick="event.stopPropagation()" style="position:relative; margin:8% auto; width:min(560px,90%); background:var(--modal-bg); border:2px solid var(--hive-yellow); border-radius:10px; padding:2rem 2.25rem;">
+    <button onclick="hideImpressum()" style="position:absolute; top:0.75rem; right:0.9rem; background:none; border:none; font-size:1.3rem; cursor:pointer; color:#7a4e00; line-height:1;">&#x2715;</button>
+    <h2 style="font-family:'Special Elite',cursive; font-size:1.2rem; color:var(--hero-dark); margin-bottom:1.25rem;">Impressum</h2>
+    <p style="font-size:0.82rem; color:#555; margin-bottom:1rem; line-height:1.7;">
+      <strong style="color:#1a1a1a;">Angaben gemäß § 5 TMG</strong><br>
+      Lea Schönherr<br>
+      CISPA Helmholtz Center for Information Security<br>
+      Stuhlsatzenhaus 5<br>
+      66123 Saarbrücken<br>
+      Germany
+    </p>
+    <p style="font-size:0.82rem; color:#555; margin-bottom:1rem; line-height:1.7;">
+      <strong style="color:#1a1a1a;">Kontakt</strong><br>
+      E-Mail: <a href="mailto:schoenherr@cispa.de" style="color:#7a4e00;">schoenherr@cispa.de</a>
+    </p>
+    <p style="font-size:0.82rem; color:#555; margin-bottom:1rem; line-height:1.7;">
+      <strong style="color:#1a1a1a;">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</strong><br>
+      Lea Schönherr<br>
+      CISPA Helmholtz Center for Information Security<br>
+      Stuhlsatzenhaus 5, 66123 Saarbrücken
+    </p>
+    <p style="font-size:0.78rem; color:#aaa; line-height:1.6;">
+      Weitere Informationen zum institutionellen Impressum:
+      <a href="https://cispa.de/en/imprint" target="_blank" rel="noopener" style="color:#a06600;">cispa.de/en/imprint</a>
+    </p>
+  </div>
+</div>
+
+</body>
 </html>

@@ -72,4 +72,10 @@ var bibtex = {
     'schoenherr-17-spoofing': '<p>@inproceedings{schoenherr-17-spoofing,<br>&nbsp;&nbsp;&nbsp;&nbsp;author={Lea Sch{\\"o}nherr and Steffen Zeiler and Dorothea Kolossa},<br>&nbsp;&nbsp;&nbsp;&nbsp;title={Spoofing detection via simultaneous verification of audio-visual synchronicity and transcription},<br>&nbsp;&nbsp;&nbsp;&nbsp;booktitle={IEEE Automatic Speech Recognition and Understanding Workshop (ASRU)},<br>&nbsp;&nbsp;&nbsp;&nbsp;year={2017}<br>}</p>',
 
     'schoenherr-16-audiovisual': '<p>@inproceedings{schoenherr-16-audiovisual,<br>&nbsp;&nbsp;&nbsp;&nbsp;author={Lea Sch{\\"o}nherr and Dennis Orth and Martin Heckmann and Dorothea Kolossa},<br>&nbsp;&nbsp;&nbsp;&nbsp;title={Environmentally robust audio-visual speaker identification},<br>&nbsp;&nbsp;&nbsp;&nbsp;booktitle={IEEE Spoken Language Technology Workshop (SLT)},<br>&nbsp;&nbsp;&nbsp;&nbsp;year={2016}<br>}</p>',
+
+    'aloufi-26-audio': '<p>@article{aloufi-26-audio,<br>&nbsp;&nbsp;&nbsp;&nbsp;author={Ranya Aloufi and Srishti Gupta and Soumya Shaw and Battista Biggio and Lea Sch{\\"o}nherr},<br>&nbsp;&nbsp;&nbsp;&nbsp;title={Evaluation of Audio Language Models for Fairness, Safety, and Security},<br>&nbsp;&nbsp;&nbsp;&nbsp;journal={arXiv preprint arXiv:2603.13262},<br>&nbsp;&nbsp;&nbsp;&nbsp;year={2026}<br>}</p>',
+
+    'abedini-26-stubborn': '<p>@article{abedini-26-stubborn,<br>&nbsp;&nbsp;&nbsp;&nbsp;author={Samira Abedini and Sina Mavali and Lea Sch{\\"o}nherr and Martin Pawelczyk and Rebekka Burkholz},<br>&nbsp;&nbsp;&nbsp;&nbsp;title={Don\'t Trust Stubborn Neighbors: A Security Framework for Agentic Networks},<br>&nbsp;&nbsp;&nbsp;&nbsp;journal={arXiv preprint arXiv:2603.15809},<br>&nbsp;&nbsp;&nbsp;&nbsp;year={2026}<br>}</p>',
+
+    'srivastav-26-unknowns': '<p>@article{srivastav-26-unknowns,<br>&nbsp;&nbsp;&nbsp;&nbsp;author={Devansh Srivastav and David Pape and Lea Sch{\\"o}nherr},<br>&nbsp;&nbsp;&nbsp;&nbsp;title={Unknown Unknowns: Why Hidden Intentions in LLMs Evade Detection},<br>&nbsp;&nbsp;&nbsp;&nbsp;journal={arXiv preprint arXiv:2601.18552},<br>&nbsp;&nbsp;&nbsp;&nbsp;year={2026}<br>}</p>',
 }
