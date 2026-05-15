@@ -617,23 +617,31 @@
     .teaching-type-tag {
       font-size: 0.72rem;
       font-weight: 600;
-      background: var(--badge-bg);
-      border: 1px solid var(--badge-border);
-      border-radius: 3px;
-      padding: 0.2rem 0.5rem;
-      color: var(--amber-dark);
-      letter-spacing: 0.02em;
-    }
-
-    .teaching-loc-tag {
-      font-size: 0.72rem;
-      font-weight: 600;
       background: var(--amber-dark);
       border: 1px solid var(--amber-dark);
       border-radius: 3px;
       padding: 0.2rem 0.5rem;
       color: #fff;
       letter-spacing: 0.02em;
+    }
+
+    .teaching-loc-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      border-radius: 3px;
+      padding: 0.2rem 0.5rem;
+      color: var(--amber-dark);
+      letter-spacing: 0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .teaching-loc-tag img {
+      height: 14px;
+      width: auto;
+      display: block;
     }
 
     /* ── Footer ── */
@@ -747,6 +755,8 @@
     }
 
     [id] { scroll-margin-top: var(--nav-h); }
+    /* pub-blocks sit under nav + Publications h2 + sticky year heading */
+    .pub-block[id] { scroll-margin-top: calc(var(--nav-h) + var(--h2-h) + 2rem); }
   </style>
 </head>
 <body>
@@ -774,7 +784,7 @@
         />
       </div>
       <div>
-        <h1 class="hero-name">Lea Schönherr</h1>
+<h1 class="hero-name">Lea Schönherr</h1>
         <p class="hero-role">Faculty · CISPA Helmholtz Center for Information Security</p>
         <hr class="hero-hr" />
         <p class="hero-bio">
@@ -1522,6 +1532,11 @@
 
     <p class="press-section-label" style="margin-top: 1.5rem;">More coverage</p>
     <div class="press-plain-list">
+      <a class="press-plain-item" href="https://www.sr.de/sr/home/nachrichten/panorama/deepnudes_deepfakes_kinder_social_media_100.html" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">SR</span>
+        <span class="press-pi-title">Deepfake-Pornografie: Vor allem Kinder und Jugendliche betroffen</span>
+        <span class="press-pi-date">Apr 2026</span>
+      </a>
       <a class="press-plain-item" href="https://www.ndr.de/podcast/die-scamming-mafia-ki-und-moderne-sklaverei-11km-classic,audio-2884584.html" target="_blank" rel="noopener">
         <span class="press-pi-outlet">NDR 11km</span>
         <span class="press-pi-title">Die Scamming-Mafia: KI und moderne Sklaverei</span>
@@ -1686,7 +1701,7 @@
         <div class="teaching-tags">
           <span class="teaching-type-tag">Master</span>
           <span class="teaching-type-tag">Lecture</span>
-          <span class="teaching-loc-tag">University of Hamburg</span>
+          <span class="teaching-loc-tag"><img src="media/uhh_logo.svg" alt="">University of Hamburg</span>
         </div>
       </div>
     </div>
@@ -1698,7 +1713,7 @@
         <div class="teaching-tags">
           <span class="teaching-type-tag">Master</span>
           <span class="teaching-type-tag">Lecture</span>
-          <span class="teaching-loc-tag">University of Hamburg</span>
+          <span class="teaching-loc-tag"><img src="media/uhh_logo.svg" alt="">University of Hamburg</span>
         </div>
       </div>
     </div>
@@ -1710,7 +1725,7 @@
         <div class="teaching-tags">
           <span class="teaching-type-tag">Master</span>
           <span class="teaching-type-tag">Seminar</span>
-          <span class="teaching-loc-tag">Saarland University</span>
+          <span class="teaching-loc-tag"><img src="media/uds_owl.svg" alt="">Saarland University</span>
         </div>
       </div>
     </div>
@@ -1722,7 +1737,7 @@
         <div class="teaching-tags">
           <span class="teaching-type-tag">Bachelor</span>
           <span class="teaching-type-tag">Seminar</span>
-          <span class="teaching-loc-tag">Saarland University</span>
+          <span class="teaching-loc-tag"><img src="media/uds_owl.svg" alt="">Saarland University</span>
         </div>
       </div>
     </div>
@@ -1734,7 +1749,7 @@
         <div class="teaching-tags">
           <span class="teaching-type-tag">Master</span>
           <span class="teaching-type-tag">Seminar</span>
-          <span class="teaching-loc-tag">Saarland University</span>
+          <span class="teaching-loc-tag"><img src="media/uds_owl.svg" alt="">Saarland University</span>
         </div>
       </div>
     </div>
@@ -1746,7 +1761,7 @@
         <div class="teaching-tags">
           <span class="teaching-type-tag">Master</span>
           <span class="teaching-type-tag">Seminar</span>
-          <span class="teaching-loc-tag">Saarland University</span>
+          <span class="teaching-loc-tag"><img src="media/uds_owl.svg" alt="">Saarland University</span>
         </div>
       </div>
     </div>
@@ -1764,7 +1779,7 @@
       <a href="https://scholar.google.com/citations?user=DtLfiGoAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
       <a href="https://dormantneurons.science" target="_blank" rel="noopener">Research Group</a>
       <a href="https://cispa.de/de/people/c01lesc" target="_blank" rel="noopener">CISPA</a>
-      <a href="#" onclick="showImpressum(); return false;">Impressum</a>
+      <a href="javascript:void(0)" onclick="showImpressum();">Impressum</a>
     </div>
   </div>
 </footer>
@@ -1802,8 +1817,8 @@ function copyBibtex() {
   navigator.clipboard.writeText(text).then(function() {
     var btn = document.getElementById('bibtex-copy-btn');
     btn.innerHTML = checkSvg;
-    btn.style.color = var(--copy-success);
-    btn.style.borderColor = var(--copy-success);
+    btn.style.color = 'var(--copy-success)';
+    btn.style.borderColor = 'var(--copy-success)';
     setTimeout(function() { btn.innerHTML = copySvg; btn.style.color = '#7a4e00'; btn.style.borderColor = 'var(--badge-border)'; }, 2000);
   });
 }
