@@ -297,7 +297,10 @@
       margin-bottom: 1rem;
       padding-left: 1rem;
       border-left: 3px solid var(--hive-yellow);
+      transition: color 0.15s;
     }
+    .research-quote:hover { color: var(--amber-dark); }
+
 
     .research-areas {
       display: grid;
@@ -804,10 +807,10 @@
         <p class="hero-role">Faculty · CISPA Helmholtz Center for Information Security</p>
         <hr class="hero-hr" />
         <p class="hero-bio">
-          Lea Schönherr is a tenure-track faculty member at the <a href="https://cispa.de/en" target="_blank" rel="noopener">CISPA</a> Helmholtz Center for Information Security, where she has led research in trustworthy AI systems since 2022. She received her PhD from <a href="https://etit.ruhr-uni-bochum.de/en/" target="_blank" rel="noopener">Ruhr University Bochum</a> in 2021 with a dissertation on adversarially robust speech and speaker recognition, supported by the DFG Cluster of Excellence <a href="https://casa.rub.de/" target="_blank" rel="noopener">CASA</a>. After her PhD, she was a postdoctoral researcher at Ruhr University Bochum and CISPA, and a visiting researcher at the University of California, Berkeley, and the University of Chicago.
+          I am a tenure-track faculty at the <a href="https://cispa.de/en" target="_blank" rel="noopener">CISPA</a> Helmholtz Center for Information Security, where I have led research in trustworthy AI systems since 2022. I received my PhD from <a href="https://etit.ruhr-uni-bochum.de/en/" target="_blank" rel="noopener">Ruhr University Bochum</a> in 2021 with a dissertation on adversarially robust speech and speaker recognition, supported by the DFG Cluster of Excellence <a href="https://casa.rub.de/" target="_blank" rel="noopener">CASA</a>. After my PhD, I was a postdoctoral researcher at Ruhr University Bochum and CISPA, and a visiting researcher at the University of California, Berkeley, and the University of Chicago.
         </p>
         <p class="hero-bio">
-          In my research group <a href="https://dormantneurons.science" target="_blank" rel="noopener">Dormant Neurons</a> we work on the security of AI systems, spanning LLMs and agentic pipelines, speech and audio models, code-generating models, synthetic media and deepfake detection, and the human factors involved in AI-driven threats. We also critically examine how AI security research itself is conducted. Our research covers both attacks and defenses, with the goal of building AI that is secure, safe, and reliable.
+          In my research group <a href="https://dormantneurons.science" target="_blank" rel="noopener">Dormant Neurons</a> we work on the security of AI systems, spanning LLMs and agentic pipelines, speech and audio models, code-generating models, preventing the misuse of generative AI, and the human factors involved in AI-driven threats. We also critically examine how AI security research itself is conducted. Our research covers both attacks and defenses, with the goal of building AI that is secure, safe, and reliable such that trust emerges from understanding and transparency rather than blind reliance.
         </p>
         <p class="hero-links">
           <a href="mailto:schoenherr@cispa.de">Email</a>
@@ -846,7 +849,7 @@
   <!-- Research -->
   <section id="research">
     <h2>Research</h2>
-    <p class="research-quote">Building secure, safe, and reliable AI that people can trust.</p>
+    <p class="research-quote" onclick="document.getElementById('quote-overlay').style.display='block'" style="cursor:pointer;" title="Read more">Building secure, safe, and reliable AI people can understand and trust.</p>
     <div class="research-areas">
 
       <div class="research-area" id="research-llm">
@@ -1543,6 +1546,11 @@
         <span class="press-pi-title">Die Scamming-Mafia: KI und moderne Sklaverei</span>
         <span class="press-pi-date">Jun 2025</span>
       </a>
+      <a class="press-plain-item" href="https://www.zeit.de/digital/internet/2024-10/ki-generierte-medien-fotos-texte-identifikation-wasserzeichen" target="_blank" rel="noopener">
+        <span class="press-pi-outlet">Die Zeit</span>
+        <span class="press-pi-title">Zaubertinte gegen die KI-Flut</span>
+        <span class="press-pi-date">Oct 2024</span>
+      </a>
       <a class="press-plain-item" href="https://www.handelsblatt.com/technik/it-internet/cyberkriminalitaet-wie-der-enkeltrick-nur-mit-ki-deepfake-betrueger-erpressen-firmen-mit-falscher-chef-stimme/28003742.html" target="_blank" rel="noopener">
         <span class="press-pi-outlet">Handelsblatt</span>
         <span class="press-pi-title">Wie der Enkeltrick, nur mit KI: Deepfake-Betrüger erpressen Firmen mit falscher Chef-Stimme</span>
@@ -1836,7 +1844,7 @@ function hideImpressum() {
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') { hideBibtex(); hideImpressum(); }
+  if (e.key === 'Escape') { hideBibtex(); hideImpressum(); document.getElementById('quote-overlay').style.display='none'; }
 });
 
 document.querySelectorAll('a.pub-tag[href^="#research-"]').forEach(function(link) {
@@ -1896,6 +1904,16 @@ document.querySelectorAll('a.pub-tag[href^="#research-"]').forEach(function(link
       Weitere Informationen zum institutionellen Impressum:
       <a href="https://cispa.de/en/imprint" target="_blank" rel="noopener" style="color:#a06600;">cispa.de/en/imprint</a>
     </p>
+  </div>
+</div>
+
+<!-- Quote overlay -->
+<div id="quote-overlay" onclick="this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.45); z-index:1000;">
+  <div onclick="event.stopPropagation()" style="position:relative; margin:8% auto; width:min(600px,90%); background:#fff; border:2px solid var(--hive-yellow); border-radius:10px; padding:2rem 2.25rem;">
+    <button onclick="document.getElementById('quote-overlay').style.display='none'" style="position:absolute; top:0.75rem; right:0.9rem; background:none; border:none; font-size:1.3rem; cursor:pointer; color:#7a4e00; line-height:1;">&#x2715;</button>
+    <p style="font-family:'Lora',Georgia,serif; font-size:1.05rem; color:var(--hero-dark); font-style:italic; margin-bottom:1.25rem;">Building secure, safe, and reliable AI people can understand and trust.</p>
+    <p style="font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; font-weight:600; margin-bottom:0.75rem;">My Vision</p>
+    <p style="font-size:0.9rem; color:#555; line-height:1.75;">AI systems shape high-stakes decisions, communication, and infrastructure, yet their security, reliability, and trustworthiness remain difficult to assess. We believe trust in AI should not come from blind reliance or narrow evaluation claims, but from clarity, evidence, and the ability to critically evaluate a system's behavior, limitations, and risks. My research examines the AI ecosystem, focusing on systems and algorithms and their security properties, while also considering how these technologies are developed, evaluated, and used in practice. We aim to identify vulnerabilities, improve resilience, and design AI systems whose safety and reliability can be meaningfully verified by researchers, developers, users, and institutions alike.</p>
   </div>
 </div>
 
