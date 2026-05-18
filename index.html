@@ -77,23 +77,23 @@
 
     :root {
       --hive-yellow: #FDA20A;
-      --hero-bg: #FEEDB8;
-      --amber-dark: #7a4e00;
-      --amber-mid: #b87800;
-      --badge-bg: #fef9ec;
-      --badge-border: #d4a830;
-      --divider: #e8d080;
-      --divider-subtle: #f5f0e0;
-      --hero-dark: #3a2000;
-      --modal-bg: #fff8e8;
+      --hero-bg: #23292C;
+      --amber-dark: #23292C;
+      --amber-mid: #666666;
+      --badge-bg: #f2f2f2;
+      --badge-border: #c8c8c8;
+      --divider: #e0e0e0;
+      --divider-subtle: #eeeeee;
+      --hero-dark: #bbbbbb;
+      --modal-bg: #f7f7f7;
       --text-faint: #bbb;
       --text: #1a1a1a;
       --text-muted: #555;
       --border: #ddd;
-      --pub-title-color: #5a3500;
+      --pub-title-color: #23292C;
       --copy-success: #2a6000;
       --link-muted: #999;
-      --amber: #a06600;
+      --amber: #23292C;
       --nav-h: 53px;
       --h2-h: 3.0rem;
     }
@@ -106,33 +106,42 @@
       background: #fff;
       color: var(--text);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     /* ── Top nav (merged) ── */
     .top-bar { display: none; }
 
-    /* ── Amber hero header ── */
+    /* ── Hero header ── */
     #hero {
-      background: linear-gradient(to top, var(--hive-yellow), var(--hero-bg));
-      padding: 60px 0 44px;
+      background-color: #23292C;
+      padding-bottom: 44px;
+    }
+
+    .hero-signal-strip {
+      background-image: url('media/signal.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% auto;
+      padding: 60px 20px 40px;
+    }
+
+    .hero-text {
+      padding-top: 1.5rem;
     }
 
     .container {
-      max-width: 920px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .hero-layout {
-      display: grid;
-      grid-template-columns: 190px 1fr;
-      gap: 3rem;
-      align-items: start;
+      padding: 0 20px;
     }
 
     .hero-photo {
-      width: 170px;
-      height: 170px;
+      width: 33%;
+      max-width: 280px;
+      height: auto;
+      aspect-ratio: 1;
       object-fit: cover;
       object-position: center top;
       display: block;
@@ -141,43 +150,52 @@
 
     .hero-name {
       font-family: 'Special Elite', Georgia, serif;
-      font-size: 2.5rem;
-      color: #1a1a1a;
+      font-size: 3rem;
+      font-weight: 400;
+      color: #ffffff;
       margin-bottom: 0.15rem;
       line-height: 1.15;
     }
 
     .hero-role {
       font-family: 'Special Elite', Georgia, serif;
-      font-size: 1.15rem;
-      color: var(--hero-dark);
+      font-size: 1.35rem;
+      color: rgba(255,255,255,0.75);
       margin-bottom: 0.75rem;
     }
 
     .hero-hr {
       border: none;
-      border-top: 1px solid rgba(0,0,0,0.2);
+      border-top: 1px solid rgba(255,255,255,0.2);
       margin: 0.75rem 0 1rem;
     }
 
     .hero-bio {
-      font-size: 1.05rem;
-      color: #1a1a1a;
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.88);
       line-height: 1.75;
       margin-bottom: 0.85rem;
     }
 
-    .hero-bio a { color: var(--hero-dark); text-decoration: none; font-weight: 600; }
+    .hero-bio a { color: #bbbbbb; text-decoration: none; font-weight: 600; }
     .hero-bio a:hover { text-decoration: underline; }
 
     .hero-links {
-      font-size: 1.05rem;
-      color: #1a1a1a;
+      display: flex;
+      gap: 1.1rem;
+      align-items: center;
     }
 
-    .hero-links a { color: #1a1a1a; text-decoration: none; font-weight: 600; }
-    .hero-links a:hover { text-decoration: underline; }
-    .hero-links .dot { color: rgba(0,0,0,0.35); margin: 0 0.5rem; }
+    .hero-links a {
+      color: #bbbbbb;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.15s;
+    }
+
+    .hero-links a:hover { color: #ffffff; }
+    .hero-links a svg { width: 22px; height: 22px; fill: currentColor; }
 
     /* ── Sticky nav (logo + name left, links right) ── */
     .tabs-nav {
@@ -189,9 +207,6 @@
     }
 
     .tabs-nav-inner {
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -267,9 +282,9 @@
 
     /* ── Content wrapper ── */
     .content-wrap {
-      max-width: 920px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 20px;
     }
 
     section { padding: 2.5rem 0; }
@@ -279,6 +294,7 @@
     h2 {
       font-family: 'Special Elite', Georgia, serif;
       font-size: 1.5rem;
+      font-weight: 400;
       color: var(--text);
       margin-bottom: 1.25rem;
       position: sticky;
@@ -317,6 +333,7 @@
     .research-area-title {
       font-family: 'Special Elite', Georgia, serif;
       font-size: 0.95rem;
+      font-weight: 400;
       color: var(--pub-title-color);
       margin-bottom: 0.45rem;
     }
@@ -332,6 +349,7 @@
     .year-heading {
       font-family: 'Special Elite', Georgia, serif;
       font-size: 0.82rem;
+      font-weight: 400;
       color: #999;
       margin: 1.75rem 0 0.5rem;
       position: sticky;
@@ -422,7 +440,7 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    .tag-llm        { background: #fef3dc; color: #a06000; }
+    .tag-llm        { background: #f2f2f2; color: #23292C; }
     .tag-speech     { background: #e0f4f1; color: #00695c; }
     .tag-adversarial{ background: #fce8e8; color: #b71c1c; }
     .tag-deepfakes  { background: #f3e8ff; color: #6b21a8; }
@@ -663,11 +681,38 @@
       display: block;
     }
 
+    .teaching-intro {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .teaching-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-top: 0.6rem;
+    }
+    .teaching-desc p { margin-bottom: 0.45rem; }
+    .teaching-desc p:last-child { margin-bottom: 0; }
+    .teaching-desc-heading {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0.6rem 0 0.3rem;
+    }
+    .teaching-desc ul {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+    .teaching-desc li { margin-bottom: 0.2rem; }
+
     /* ── Service ── */
     .service-subsection-label {
       font-family: 'Special Elite', Georgia, serif;
       font-size: 0.78rem;
-      font-weight: 600;
+      font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.09em;
       color: var(--amber-mid);
@@ -739,7 +784,7 @@
       gap: 0.4rem;
       font-size: 0.8rem;
       font-weight: 600;
-      background: var(--hero-bg);
+      background: var(--badge-bg);
       border: 1.5px solid var(--hive-yellow);
       border-radius: 5px;
       padding: 0.35rem 0.7rem;
@@ -816,15 +861,11 @@
       }
 
       /* Hero */
-      #hero { padding: 32px 0 24px; }
-      .hero-layout {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-      }
-      .hero-photo { width: 110px; height: 110px; }
-      .hero-name { font-size: 1.9rem; }
-      .hero-role { font-size: 1rem; }
-      .hero-bio { font-size: 0.95rem; }
+      #hero { padding-bottom: 24px; }
+      .hero-photo { width: 60%; max-width: 220px; }
+      .hero-name { font-size: 2rem; }
+      .hero-role { font-size: 1.1rem; }
+      .hero-bio { font-size: 1rem; }
       .hero-links { font-size: 0.95rem; }
 
       /* Publications: stack badge+links below title */
@@ -882,43 +923,52 @@
 
 <!-- Dark hero header -->
 <div id="hero">
-  <div class="container">
-    <div class="hero-layout">
-      <div>
-        <img
-          src="https://cispa.de/person-images/c01lesc.jpg"
-          alt="Lea Schönherr"
-          class="hero-photo"
-          onerror="this.style.display='none'"
-        />
-      </div>
-      <div>
-<h1 class="hero-name">Lea Schönherr</h1>
-        <p class="hero-role">Faculty · CISPA Helmholtz Center for Information Security</p>
-        <hr class="hero-hr" />
-        <p class="hero-bio">
-          I am a tenure-track faculty at the <a href="https://cispa.de/en" target="_blank" rel="noopener">CISPA</a> Helmholtz Center for Information Security, where I have led research in trustworthy AI systems since 2022. I received my PhD from <a href="https://etit.ruhr-uni-bochum.de/en/" target="_blank" rel="noopener">Ruhr University Bochum</a> in 2021 with a dissertation on adversarially robust speech and speaker recognition, supported by the DFG Cluster of Excellence <a href="https://casa.rub.de/" target="_blank" rel="noopener">CASA</a>. After my PhD, I was a postdoctoral researcher at Ruhr University Bochum and CISPA, and a visiting researcher at the University of California, Berkeley, and the University of Chicago.
-        </p>
-        <p class="hero-bio">
-          In my research group <a href="https://dormantneurons.science" target="_blank" rel="noopener">Dormant Neurons</a> we work on the security of AI systems, spanning LLMs and agentic pipelines, speech and audio models, code-generating models, preventing the misuse of generative AI, and the human factors involved in AI-driven threats. We also critically examine how AI security research itself is conducted. Our research covers both attacks and defenses, with the goal of building AI that is secure, safe, and reliable such that trust emerges from understanding and transparency rather than blind reliance.
-        </p>
-        <p class="hero-links">
-          <a href="mailto:schoenherr@cispa.de">Email</a>
-          <span class="dot">&middot;</span>
-          <a href="https://scholar.google.com/citations?user=DtLfiGoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-          <span class="dot">&middot;</span>
-          <a href="https://www.linkedin.com/in/lea-schoenherr" target="_blank" rel="noopener">LinkedIn</a>
-          <span class="dot">&middot;</span>
-          <a href="https://cispa.de/de/people/c01lesc" target="_blank" rel="noopener">CISPA Profile</a>
-        </p>
-      </div>
+  <!-- Signal strip: photo sits on top of the waveform -->
+  <div class="hero-signal-strip">
+    <div class="container">
+      <img
+        src="https://cispa.de/person-images/c01lesc.jpg"
+        alt="Lea Schönherr"
+        class="hero-photo"
+        onerror="this.style.display='none'"
+      />
     </div>
+  </div>
+  <!-- Text content below the signal -->
+  <div class="container hero-text">
+    <h1 class="hero-name">Lea Schönherr</h1>
+    <p class="hero-role">Faculty</p>
+    <hr class="hero-hr" />
+    <p class="hero-bio">
+      I am a tenure-track faculty at the <a href="https://cispa.de/en" target="_blank" rel="noopener">CISPA</a> Helmholtz Center for Information Security, where I have led research in trustworthy AI systems since 2022. I received my PhD from <a href="https://etit.ruhr-uni-bochum.de/en/" target="_blank" rel="noopener">Ruhr University Bochum</a> in 2021 with a dissertation on adversarially robust speech and speaker recognition, supported by the DFG Cluster of Excellence <a href="https://casa.rub.de/" target="_blank" rel="noopener">CASA</a>. After my PhD, I was a postdoctoral researcher at Ruhr University Bochum and CISPA, and a visiting researcher at the University of California, Berkeley, and the University of Chicago.
+    </p>
+    <p class="hero-bio">
+      In my research group <a href="https://dormantneurons.science" target="_blank" rel="noopener">Dormant Neurons</a> we work on the security of AI systems, spanning LLMs and agentic pipelines, speech and audio models, code-generating models, preventing the misuse of generative AI, and the human factors involved in AI-driven threats. We also critically examine how AI security research itself is conducted. Our research covers both attacks and defenses, with the goal of building AI that is secure, safe, and reliable such that trust emerges from understanding and transparency rather than blind reliance.
+    </p>
+    <p class="hero-links">
+      <!-- Email -->
+      <a href="mailto:schoenherr@cispa.de" title="Email">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </a>
+      <!-- Google Scholar -->
+      <a href="https://scholar.google.com/citations?user=DtLfiGoAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/lea-schoenherr" target="_blank" rel="noopener" title="LinkedIn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <!-- CISPA Profile -->
+      <a href="https://cispa.de/de/people/c01lesc" target="_blank" rel="noopener" title="CISPA Profile">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+      </a>
+    </p>
   </div>
 </div>
 
 <!-- Sticky nav -->
 <nav class="tabs-nav">
-  <div class="tabs-nav-inner">
+  <div class="container tabs-nav-inner">
     <a href="#hero" class="tabs-nav-brand">
       <img src="media/hive.svg" alt="Hive" class="tabs-nav-logo" />
       <span class="tabs-nav-brand-text">Lea Schönherr</span>
@@ -1796,8 +1846,10 @@
   <section id="teaching">
     <h2>Teaching</h2>
 
+    <p class="teaching-intro">My teaching focuses on secure and trustworthy machine learning, adversarial AI, and the risks and chances of generative models on graduate and undergraduate levels. I aim to equip students with both strong technical foundations and a critical understanding of real-world security risks in modern AI systems, as well as research practice. I regularly teach lectures, seminars, and at international summer schools. My courses combine theoretical lectures with hands-on exercises and projects which are continuously curated to reflect current research trends and practical applications.</p>
+
     <div class="teaching-block">
-      <div class="teaching-year">Summer 2026</div>
+      <div class="teaching-year">since Summer 2025</div>
       <div>
         <div class="teaching-name">Trustworthy Machine Learning</div>
         <div class="teaching-tags">
@@ -1805,17 +1857,18 @@
           <span class="teaching-type-tag">Lecture</span>
           <span class="teaching-loc-tag"><img src="media/uhh_logo.svg" alt="">University of Hamburg</span>
         </div>
-      </div>
-    </div>
-
-    <div class="teaching-block">
-      <div class="teaching-year">Summer 2025</div>
-      <div>
-        <div class="teaching-name">Trustworthy Machine Learning</div>
-        <div class="teaching-tags">
-          <span class="teaching-type-tag">Master</span>
-          <span class="teaching-type-tag">Lecture</span>
-          <span class="teaching-loc-tag"><img src="media/uhh_logo.svg" alt="">University of Hamburg</span>
+        <div class="teaching-desc">
+          <p>Machine learning systems are increasingly deployed in high-stakes and security-sensitive environments, ranging from generative AI assistants and code generation systems to autonomous decision-making pipelines. As these systems become more capable, ensuring their robustness, security, fairness, and accountability becomes essential.</p>
+          <p>This lecture introduces the foundations of trustworthy machine learning. We examine how modern ML systems can fail, how they can be attacked, and how principled defenses can be designed. The course emphasizes a security-oriented perspective on machine learning, integrating robustness, privacy, and interpretability.</p>
+          <p class="teaching-desc-heading">Core Topics</p>
+          <ul>
+            <li><strong>Robustness:</strong> Adversarial examples across modalities (image, audio, text) and adversarial training.</li>
+            <li><strong>Privacy:</strong> Membership inference, model inversion, and machine unlearning.</li>
+            <li><strong>Integrity &amp; Security:</strong> Data poisoning, model stealing, and threat modeling.</li>
+            <li><strong>Interpretability &amp; Accountability:</strong> Explainable AI (XAI) and transparency mechanisms.</li>
+            <li><strong>Fairness:</strong> Biases in training data and their societal and legal implications.</li>
+            <li><strong>Trustworthy Generative AI:</strong> LLM security, prompt injection, data leakage, and deepfake detection.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -1829,6 +1882,16 @@
           <span class="teaching-type-tag">Seminar</span>
           <span class="teaching-loc-tag"><img src="media/uds_owl.svg" alt="">Saarland University</span>
         </div>
+        <div class="teaching-desc">
+          <p>As artificial intelligence systems evolve from pattern recognition tools to autonomous decision-making systems, they increasingly function as agents rather than passive models. These agentic systems are capable of planning, acting, and adapting to dynamic environments. While such capabilities significantly enhance their utility, they also introduce fundamental questions regarding reliability, safety, and alignment with human objectives.</p>
+          <p>This seminar examines the conceptual and technical foundations required to build trustworthy agentic AI systems. Rather than emphasizing scale or efficiency, the course focuses on principled system design, evaluation, and oversight mechanisms.</p>
+          <p class="teaching-desc-heading">Core Questions</p>
+          <ul>
+            <li>How can we rigorously evaluate whether an AI system warrants trust?</li>
+            <li>Which design principles and architectural choices mitigate the risk of unintended or harmful behaviour?</li>
+            <li>How can human–AI collaboration be structured to preserve oversight, accountability, and control?</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -1840,6 +1903,20 @@
           <span class="teaching-type-tag">Bachelor</span>
           <span class="teaching-type-tag">Seminar</span>
           <span class="teaching-loc-tag"><img src="media/uds_owl.svg" alt="">Saarland University</span>
+        </div>
+        <div class="teaching-desc">
+          <p>Generative machine learning systems such as large language models, image generators, and speech synthesis tools are increasingly integrated into everyday applications. While these systems demonstrate impressive capabilities, they also raise important questions about reliability, security, fairness, and societal impact.</p>
+          <p>This bachelor-level seminar introduces students to the foundations of trustworthy generative machine learning. We examine how generative models work, where they can fail, and how they may be misused. The focus lies on understanding risks and developing principled approaches to make these systems more robust, transparent, and aligned with human values.</p>
+          <p class="teaching-desc-heading">Topics Covered</p>
+          <ul>
+            <li>Introduction to generative models (LLMs, diffusion models, multimodal systems)</li>
+            <li>Hallucinations and reliability of generated content</li>
+            <li>Prompt injection and misuse of language models</li>
+            <li>Bias and fairness in generative AI systems</li>
+            <li>Deepfakes and synthetic media detection</li>
+            <li>Privacy risks and data leakage</li>
+            <li>Human–AI interaction and oversight</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -2001,8 +2078,8 @@
 <!-- BibTeX overlay -->
 <div id="bibtex-overlay" onclick="hideBibtex()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.45); z-index:1000;">
   <div onclick="event.stopPropagation()" style="position:relative; margin:12% auto; width:min(600px,90%); background:var(--modal-bg); border:2px solid var(--hive-yellow); border-radius:10px; padding:1.75rem 2rem;">
-    <button onclick="hideBibtex()" style="position:absolute; top:0.75rem; right:0.9rem; background:none; border:none; font-size:1.3rem; cursor:pointer; color:#7a4e00; line-height:1;">&#x2715;</button>
-    <button id="bibtex-copy-btn" onclick="copyBibtex()" title="Copy BibTeX" style="position:absolute; top:0.7rem; right:2.6rem; background:none; border:1px solid var(--badge-border); border-radius:4px; cursor:pointer; color:#7a4e00; padding:0.3rem 0.4rem; line-height:0; display:flex; align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+    <button onclick="hideBibtex()" style="position:absolute; top:0.75rem; right:0.9rem; background:none; border:none; font-size:1.3rem; cursor:pointer; color:#23292C; line-height:1;">&#x2715;</button>
+    <button id="bibtex-copy-btn" onclick="copyBibtex()" title="Copy BibTeX" style="position:absolute; top:0.7rem; right:2.6rem; background:none; border:1px solid var(--badge-border); border-radius:4px; cursor:pointer; color:#23292C; padding:0.3rem 0.4rem; line-height:0; display:flex; align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
     <pre id="bibtex-content" style="font-family:monospace; font-size:0.82rem; white-space:pre-wrap; color:#1a1a1a; margin:0; line-height:1.6;"></pre>
   </div>
 </div>
@@ -2019,7 +2096,7 @@ function showBibtex(key) {
     .replace(/&gt;/g, '>');
   document.getElementById('bibtex-content').textContent = text;
   var btn = document.getElementById('bibtex-copy-btn');
-  btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>'; btn.style.color = '#7a4e00'; btn.style.borderColor = 'var(--badge-border)';
+  btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>'; btn.style.color = '#23292C'; btn.style.borderColor = 'var(--badge-border)';
   document.getElementById('bibtex-overlay').style.display = 'block';
   document.body.style.overflow = 'hidden';
 }
@@ -2033,7 +2110,7 @@ function copyBibtex() {
     btn.innerHTML = checkSvg;
     btn.style.color = 'var(--copy-success)';
     btn.style.borderColor = 'var(--copy-success)';
-    setTimeout(function() { btn.innerHTML = copySvg; btn.style.color = '#7a4e00'; btn.style.borderColor = 'var(--badge-border)'; }, 2000);
+    setTimeout(function() { btn.innerHTML = copySvg; btn.style.color = '#23292C'; btn.style.borderColor = 'var(--badge-border)'; }, 2000);
   });
 }
 function hideBibtex() {
@@ -2085,8 +2162,8 @@ document.querySelectorAll('a.pub-tag[href^="#research-"]').forEach(function(link
 <!-- Impressum overlay -->
 <div id="impressum-overlay" onclick="hideImpressum()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.45); z-index:1000;">
   <div onclick="event.stopPropagation()" style="position:relative; margin:8% auto; width:min(560px,90%); background:#fff; border:2px solid var(--hive-yellow); border-radius:10px; padding:2rem 2.25rem;">
-    <button onclick="hideImpressum()" style="position:absolute; top:0.75rem; right:0.9rem; background:none; border:none; font-size:1.3rem; cursor:pointer; color:#7a4e00; line-height:1;">&#x2715;</button>
-    <h2 style="font-family:'Special Elite',Georgia,serif; font-size:1.2rem; color:var(--hero-dark); margin-bottom:1.25rem;">Impressum</h2>
+    <button onclick="hideImpressum()" style="position:absolute; top:0.75rem; right:0.9rem; background:none; border:none; font-size:1.3rem; cursor:pointer; color:#23292C; line-height:1;">&#x2715;</button>
+    <h2 style="font-family:'Special Elite',Georgia,serif; font-size:1.2rem; font-weight:400; color:var(--amber-dark); margin-bottom:1.25rem;">Impressum</h2>
     <p style="font-size:0.82rem; color:#555; margin-bottom:1rem; line-height:1.7;">
       <strong style="color:#1a1a1a;">Angaben gemäß § 5 TMG</strong><br>
       Lea Schönherr<br>
@@ -2097,7 +2174,7 @@ document.querySelectorAll('a.pub-tag[href^="#research-"]').forEach(function(link
     </p>
     <p style="font-size:0.82rem; color:#555; margin-bottom:1rem; line-height:1.7;">
       <strong style="color:#1a1a1a;">Kontakt</strong><br>
-      E-Mail: <a href="mailto:schoenherr@cispa.de" style="color:#7a4e00;">schoenherr@cispa.de</a>
+      E-Mail: <a href="mailto:schoenherr@cispa.de" style="color:#23292C;">schoenherr@cispa.de</a>
     </p>
     <p style="font-size:0.82rem; color:#555; margin-bottom:1rem; line-height:1.7;">
       <strong style="color:#1a1a1a;">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</strong><br>
@@ -2107,7 +2184,7 @@ document.querySelectorAll('a.pub-tag[href^="#research-"]').forEach(function(link
     </p>
     <p style="font-size:0.78rem; color:#aaa; line-height:1.6;">
       Weitere Informationen zum institutionellen Impressum:
-      <a href="https://cispa.de/en/imprint" target="_blank" rel="noopener" style="color:#a06600;">cispa.de/en/imprint</a>
+      <a href="https://cispa.de/en/imprint" target="_blank" rel="noopener" style="color:#23292C;">cispa.de/en/imprint</a>
     </p>
   </div>
 </div>
@@ -2115,8 +2192,8 @@ document.querySelectorAll('a.pub-tag[href^="#research-"]').forEach(function(link
 <!-- Quote overlay -->
 <div id="quote-overlay" onclick="this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.45); z-index:1000;">
   <div onclick="event.stopPropagation()" style="position:relative; margin:8% auto; width:min(600px,90%); background:#fff; border:2px solid var(--hive-yellow); border-radius:10px; padding:2rem 2.25rem;">
-    <button onclick="document.getElementById('quote-overlay').style.display='none'" style="position:absolute; top:0.75rem; right:0.9rem; background:none; border:none; font-size:1.3rem; cursor:pointer; color:#7a4e00; line-height:1;">&#x2715;</button>
-    <p style="font-family:'Special Elite',Georgia,serif; font-size:1.05rem; color:var(--hero-dark); font-style:italic; margin-bottom:1.25rem;">Building secure, safe, and reliable AI people can understand and trust.</p>
+    <button onclick="document.getElementById('quote-overlay').style.display='none'" style="position:absolute; top:0.75rem; right:0.9rem; background:none; border:none; font-size:1.3rem; cursor:pointer; color:#23292C; line-height:1;">&#x2715;</button>
+    <p style="font-family:'Special Elite',Georgia,serif; font-size:1.05rem; color:var(--amber-dark); font-style:italic; margin-bottom:1.25rem;">Building secure, safe, and reliable AI people can understand and trust.</p>
     <p style="font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; font-weight:600; margin-bottom:0.75rem;">My Vision</p>
     <p style="font-size:0.9rem; color:#555; line-height:1.75;">AI systems shape high-stakes decisions, communication, and infrastructure, yet their security, reliability, and trustworthiness remain difficult to assess. Trust in AI should not come from blind reliance or narrow evaluation claims, but from clarity, evidence, and the ability to critically evaluate a system's behavior, limitations, and risks. Our research examines the AI ecosystem with a focus on its security properties, while also considering how these technologies are developed, evaluated, and used in practice. We aim to identify vulnerabilities, improve resilience, and design AI systems whose safety and reliability can be meaningfully verified by researchers, developers, users, and institutions alike.</p>
   </div>
