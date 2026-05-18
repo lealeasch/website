@@ -663,6 +663,96 @@
       display: block;
     }
 
+    /* ── Service ── */
+    .service-subsection-label {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--amber-mid);
+      margin: 1.5rem 0 0.7rem;
+    }
+
+    .service-subsection-label:first-child { margin-top: 0; }
+
+    .service-block {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--divider-subtle);
+    }
+
+    .service-block:last-child { border-bottom: none; }
+
+    .service-year {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.95rem;
+      color: #999;
+      min-width: 110px;
+      flex-shrink: 0;
+      padding-top: 0.1rem;
+    }
+
+    .service-main { flex: 1; min-width: 0; }
+
+    .service-role {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .service-venue {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.35rem;
+    }
+
+    .service-chair-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: var(--amber-dark);
+      border: 1px solid var(--amber-dark);
+      border-radius: 3px;
+      padding: 0.2rem 0.5rem;
+      color: #fff;
+      letter-spacing: 0.02em;
+    }
+
+    .reviewer-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .reviewer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: var(--hero-bg);
+      border: 1.5px solid var(--hive-yellow);
+      border-radius: 5px;
+      padding: 0.35rem 0.7rem;
+      color: var(--amber-dark);
+      letter-spacing: 0.02em;
+    }
+
+    .reviewer-badge::before {
+      content: "★";
+      color: var(--hive-yellow);
+      font-size: 0.85rem;
+    }
+
     /* ── Footer ── */
     footer {
       border-top: 3px solid var(--hive-yellow);
@@ -840,6 +930,7 @@
       <a href="#talks">Talks</a>
       <a href="#press">Press</a>
       <a href="#teaching">Teaching</a>
+      <a href="#service">Service</a>
     </div>
   </div>
 </nav>
@@ -894,7 +985,7 @@
           <a href="#research-attacksdefenses" class="pub-tag tag-privacy">Privacy</a>
         </div>
         <h3 class="research-area-title">Attacks &amp; Defenses</h3>
-        <p class="research-area-body">Security research requires grounding in both offense and defense. On the offensive side, our work studies adversarial attacks on speech recognition via psychoacoustic hiding (<a href="#pub-psychoacoustic">Psychoacoustic Hiding</a>) and robust over-the-air perturbations (<a href="#pub-imperio">Imperio</a>), adversarial attacks on deepfake detectors (<a href="#pub-robustfake">Adversarial Robustness</a>), and eliciting security vulnerabilities from code language models (<a href="#pub-codellmsec">CodeLMSec</a>). On the defensive side: perceptually constrained defenses for audio adversarial examples (<a href="#pub-dompteur">Dompteur</a>) and prompt obfuscation against injection attacks (<a href="#pub-prompt-obfuscation">Prompt Obfuscation</a>).</p>
+        <p class="research-area-body">Security research requires grounding in both offense and defense. On the offensive side, our work studies adversarial examples on speech recognition via psychoacoustic hiding (<a href="#pub-psychoacoustic">Psychoacoustic Hiding</a>) and robust over-the-air perturbations (<a href="#pub-imperio">Imperio</a>), adversarial examples on deepfake detectors (<a href="#pub-robustfake">Adversarial Robustness</a>), and eliciting security vulnerabilities from code language models (<a href="#pub-codellmsec">CodeLMSec</a>). On the defensive side: perceptually constrained defenses for audio adversarial examples (<a href="#pub-dompteur">Dompteur</a>) and prompt obfuscation against injection attacks (<a href="#pub-prompt-obfuscation">Prompt Obfuscation</a>).</p>
       </div>
 
       <div class="research-area" id="research-speech">
@@ -922,7 +1013,7 @@
   </div>
   <div class="pub-right">
     <span class="venue-badge">NDSS</span>
-    <div class="pub-links"><a href="https://arxiv.org/pdf/2512.09549" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('evertz-26-shadows')">[BibTeX]</a> <a href="https://www.youtube.com/watch?v=iPwKbwxsxAE" target="_blank" rel="noopener">[Talk]</a></div>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2512.09549" target="_blank" rel="noopener">[Paper]</a> <a href="https://www.youtube.com/watch?v=iPwKbwxsxAE" target="_blank" rel="noopener">[Talk]</a> <a class="pub-link-btn" onclick="showBibtex('evertz-26-shadows')">[BibTeX]</a></div>
   </div>
 </div>
 
@@ -946,6 +1037,7 @@
   </div>
   <div class="pub-right">
     <span class="venue-badge">CHI</span>
+    <span class="reviewer-badge" style="font-size:0.72rem; padding:0.2rem 0.5rem;">Honorable Mention</span>
     <div class="pub-links"><a href="https://arxiv.org/pdf/2505.22845" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('holtvennhoff-26-labeling')">[BibTeX]</a></div>
   </div>
 </div>
@@ -1106,6 +1198,7 @@
   </div>
   <div class="pub-right">
     <span class="venue-badge">NeurIPS</span>
+    <span class="reviewer-badge" style="font-size:0.72rem; padding:0.2rem 0.5rem;">Spotlight</span>
     <div class="pub-links"><a href="https://arxiv.org/pdf/2406.07954" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('debenedetti-24-competition')">[BibTeX]</a></div>
   </div>
 </div>
@@ -1166,7 +1259,7 @@
   </div>
   <div class="pub-right">
     <span class="venue-badge">IEEE SaTML</span>
-    <div class="pub-links"><a href="https://arxiv.org/pdf/2302.04012.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('hajipour-24-codellm')">[BibTeX]</a> <a href="https://www.youtube.com/watch?v=T5Yh3Sj4hFU" target="_blank" rel="noopener">[Talk]</a></div>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2302.04012.pdf" target="_blank" rel="noopener">[Paper]</a> <a href="https://www.youtube.com/watch?v=T5Yh3Sj4hFU" target="_blank" rel="noopener">[Talk]</a> <a class="pub-link-btn" onclick="showBibtex('hajipour-24-codellm')">[BibTeX]</a></div>
   </div>
 </div>
 
@@ -1254,7 +1347,7 @@
   </div>
   <div class="pub-right">
     <span class="venue-badge">Comp. Speech Lang.</span>
-    <div class="pub-links"> <a href="media/paper/2022_csl.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('schoenherr-22-unacceptable')">[BibTeX]</a> <a href="https://unacceptable-privacy.github.io/" target="_blank" rel="noopener">[Website]</a></div>
+    <div class="pub-links"> <a href="media/paper/2022_csl.pdf" target="_blank" rel="noopener">[Paper]</a> <a href="https://unacceptable-privacy.github.io/" target="_blank" rel="noopener">[Website]</a> <a class="pub-link-btn" onclick="showBibtex('schoenherr-22-unacceptable')">[BibTeX]</a></div>
   </div>
 </div>
 
@@ -1268,7 +1361,7 @@
   </div>
   <div class="pub-right">
     <span class="venue-badge">NeurIPS</span>
-    <div class="pub-links"> <a href="media/paper/2021_neurips.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('frank-21-wavefake')">[BibTeX]</a> <a href="https://github.com/RUB-SysSec/wavefake" target="_blank" rel="noopener">[Code]</a> <a href="https://www.youtube.com/watch?v=v2pAVp2NUQM" target="_blank" rel="noopener">[Talk]</a></div>
+    <div class="pub-links"> <a href="media/paper/2021_neurips.pdf" target="_blank" rel="noopener">[Paper]</a> <a href="https://github.com/RUB-SysSec/wavefake" target="_blank" rel="noopener">[Code]</a> <a href="https://www.youtube.com/watch?v=v2pAVp2NUQM" target="_blank" rel="noopener">[Talk]</a> <a class="pub-link-btn" onclick="showBibtex('frank-21-wavefake')">[BibTeX]</a></div>
   </div>
 </div>
 
@@ -1280,7 +1373,7 @@
   </div>
   <div class="pub-right">
     <span class="venue-badge">USENIX Sec.</span>
-    <div class="pub-links"> <a href="media/paper/2021_usenix.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('eisenhofer-21-dompteur')">[BibTeX]</a> <a href="https://github.com/RUB-SysSec/dompteur" target="_blank" rel="noopener">[Code]</a> <a href="https://www.youtube.com/watch?v=v2pAVp2NUQM" target="_blank" rel="noopener">[Talk]</a></div>
+    <div class="pub-links"> <a href="media/paper/2021_usenix.pdf" target="_blank" rel="noopener">[Paper]</a> <a href="https://github.com/RUB-SysSec/dompteur" target="_blank" rel="noopener">[Code]</a> <a href="https://www.youtube.com/watch?v=v2pAVp2NUQM" target="_blank" rel="noopener">[Talk]</a> <a class="pub-link-btn" onclick="showBibtex('eisenhofer-21-dompteur')">[BibTeX]</a></div>
   </div>
 </div>
 
@@ -1306,7 +1399,7 @@
   </div>
   <div class="pub-right">
     <span class="venue-badge">ICML</span>
-    <div class="pub-links"> <a href="media/paper/2020_icml.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('frank-20-frequency')">[BibTeX]</a> <a href="https://github.com/RUB-SysSec/GANDCTAnalysis" target="_blank" rel="noopener">[Code]</a> <a href="https://slideslive.com/s/joel-frank-30731" target="_blank" rel="noopener">[Talk]</a></div>
+    <div class="pub-links"> <a href="media/paper/2020_icml.pdf" target="_blank" rel="noopener">[Paper]</a> <a href="https://github.com/RUB-SysSec/GANDCTAnalysis" target="_blank" rel="noopener">[Code]</a> <a href="https://slideslive.com/s/joel-frank-30731" target="_blank" rel="noopener">[Talk]</a> <a class="pub-link-btn" onclick="showBibtex('frank-20-frequency')">[BibTeX]</a></div>
   </div>
 </div>
 
@@ -1318,7 +1411,7 @@
   </div>
   <div class="pub-right">
     <span class="venue-badge">ACSAC</span>
-    <div class="pub-links"> <a href="media/paper/2020_acsac.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('schoenherr-20-imperio')">[BibTeX]</a> <a href="https://www.youtube.com/watch?v=bC0D0b-wtlE" target="_blank" rel="noopener">[Talk]</a></div>
+    <div class="pub-links"> <a href="media/paper/2020_acsac.pdf" target="_blank" rel="noopener">[Paper]</a> <a href="https://www.youtube.com/watch?v=bC0D0b-wtlE" target="_blank" rel="noopener">[Talk]</a> <a class="pub-link-btn" onclick="showBibtex('schoenherr-20-imperio')">[BibTeX]</a></div>
   </div>
 </div>
 
@@ -1330,7 +1423,7 @@
   </div>
   <div class="pub-right">
     <span class="venue-badge">INTERSPEECH</span>
-    <div class="pub-links"> <a href="media/paper/2020_interspeech.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('daeubener-20-uncertainty')">[BibTeX]</a> <a href="https://github.com/rub-ksv/uncertaintyASR" target="_blank" rel="noopener">[Code]</a></div>
+    <div class="pub-links"> <a href="media/paper/2020_interspeech.pdf" target="_blank" rel="noopener">[Paper]</a> <a href="https://github.com/rub-ksv/uncertaintyASR" target="_blank" rel="noopener">[Code]</a> <a class="pub-link-btn" onclick="showBibtex('daeubener-20-uncertainty')">[BibTeX]</a></div>
   </div>
 </div>
 
@@ -1344,7 +1437,7 @@
   </div>
   <div class="pub-right">
     <span class="venue-badge">NDSS</span>
-    <div class="pub-links"> <a href="media/paper/2019_ndss.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('schoenherr-19-psychoacoustic')">[BibTeX]</a> <a href="https://adversarial-attacks.net/" target="_blank" rel="noopener">[Website]</a> <a href="https://github.com/lealeasch/adversarialattacks" target="_blank" rel="noopener">[Code]</a> <a href="https://www.youtube.com/watch?v=l_AkXxZt10I" target="_blank" rel="noopener">[Talk]</a></div>
+    <div class="pub-links"> <a href="media/paper/2019_ndss.pdf" target="_blank" rel="noopener">[Paper]</a> <a href="https://adversarial-attacks.net/" target="_blank" rel="noopener">[Website]</a> <a href="https://github.com/lealeasch/adversarialattacks" target="_blank" rel="noopener">[Code]</a> <a href="https://www.youtube.com/watch?v=l_AkXxZt10I" target="_blank" rel="noopener">[Talk]</a> <a class="pub-link-btn" onclick="showBibtex('schoenherr-19-psychoacoustic')">[BibTeX]</a></div>
   </div>
 </div>
 
@@ -1774,6 +1867,118 @@
         </div>
       </div>
     </div>
+
+  </section>
+
+  <!-- Service -->
+  <section id="service">
+    <h2>Service</h2>
+
+    <p class="service-subsection-label">Top Reviewer Recognition</p>
+    <div class="reviewer-badges">
+      <span class="reviewer-badge">USENIX Security 2025</span>
+      <span class="reviewer-badge">NeurIPS 2025</span>
+      <span class="reviewer-badge">AISec 2025</span>
+      <span class="reviewer-badge">AISec 2024</span>
+    </div>
+
+    <p class="service-subsection-label">Chairs &amp; Organization</p>
+
+    <div class="service-block">
+      <div class="service-year">2026</div>
+      <div class="service-main">
+        <div class="service-role">co-Track Chair</div>
+        <div class="service-venue">ACM Conference on Computer and Communications Security (CCS) — Machine Learning and Security Track</div>
+        <div class="service-tags"><span class="service-chair-tag">Track Chair</span></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2026</div>
+      <div class="service-main">
+        <div class="service-role">co-General Chair</div>
+        <div class="service-venue">IEEE Secure and Trustworthy Machine Learning (SaTML) — TU Munich</div>
+        <div class="service-tags"><span class="service-chair-tag">General Chair</span></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2024 – 2025</div>
+      <div class="service-main">
+        <div class="service-role">Donation Chair</div>
+        <div class="service-venue">IEEE Secure and Trustworthy Machine Learning (SaTML) — two consecutive years</div>
+        <div class="service-tags"><span class="service-chair-tag">Donation Chair</span></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2024</div>
+      <div class="service-main">
+        <div class="service-role">Competition co-Organizer</div>
+        <div class="service-venue">LLM Capture-the-Flag Competition at IEEE SaTML 2024 — 163 registered teams</div>
+        <div class="service-tags"><span class="service-chair-tag">Organizer</span></div>
+      </div>
+    </div>
+
+    <p class="service-subsection-label">Program Committees</p>
+
+    <div class="service-block">
+      <div class="service-year">2026</div>
+      <div class="service-main">
+        <div class="service-role">IEEE Security &amp; Privacy (S&amp;P)</div>
+        <div class="service-tags"></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2025</div>
+      <div class="service-main">
+        <div class="service-role">ICLR &amp; ICML</div>
+        <div class="service-tags"></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2024 – 2025</div>
+      <div class="service-main">
+        <div class="service-role">NeurIPS &amp; NeurIPS Datasets and Benchmarks Track</div>
+        <div class="service-tags"></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2023 – 2025</div>
+      <div class="service-main">
+        <div class="service-role">USENIX Security Symposium</div>
+        <div class="service-tags"></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2024</div>
+      <div class="service-main">
+        <div class="service-role">ACM CCS</div>
+        <div class="service-tags"></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2023 – 2025</div>
+      <div class="service-main">
+        <div class="service-role">IEEE SaTML</div>
+        <div class="service-tags"></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2023</div>
+      <div class="service-main">
+        <div class="service-role">DIMVA &amp; ESANN</div>
+        <div class="service-tags"></div>
+      </div>
+    </div>
+
+    <p style="font-size:0.9rem; color:var(--text-muted); margin-top:0.5rem;">In addition, I have served as a reviewer in several workshops, such as the ACM Workshop on Artificial Intelligence and Security (AISec) and the Workshop on New Frontiers in Adversarial Machine Learning (AdvML-Frontiers).</p>
 
   </section>
 
