@@ -317,7 +317,6 @@
     }
     .research-quote:hover { color: var(--amber-dark); }
 
-
     .research-areas {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -493,6 +492,10 @@
       border-radius: 3px;
       flex-shrink: 0;
       display: block;
+    }
+
+    .talk-thumb-empty {
+      background: var(--divider-subtle);
     }
 
     .talk-title {
@@ -1056,6 +1059,54 @@
 
     <h3 class="year-heading">2026</h3>
 
+    <div class="pub-block" id="pub-silent-hyperparameter">
+  <div class="pub-main">
+    <div class="pub-authors">David Pape, Jonathan Evertz, <strong>Lea Schönherr</strong></div>
+    <div class="pub-title">The Silent Hyperparameter: Quantifying the Impact of Inference Backends on LLM Reproducibility</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-meta" class="pub-tag tag-meta">Meta Science</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">NeurIPS</span>
+    <div class="pub-links"><a href="https://arxiv.org/abs/2605.19537" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('pape-26-silent')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block" id="pub-task-alignment">
+  <div class="pub-main">
+    <div class="pub-authors">Sina Mavali, David Pape, Jonathan Evertz, Samira Abedini, Devansh Srivastav, Thorsten Eisenhofer, Sahar Abdelnabi, <strong>Lea Schönherr</strong></div>
+    <div class="pub-title">No More, No Less: Task Alignment in Terminal Agents</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-llm" class="pub-tag tag-agents">Agents</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">NeurIPS</span>
+    <div class="pub-links"><a href="https://arxiv.org/abs/2605.12233" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('mavali-26-taskalignment')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block" id="pub-unknowns">
+  <div class="pub-main">
+    <div class="pub-authors">Devansh Srivastav, David Pape, <strong>Lea Schönherr</strong></div>
+    <div class="pub-title">Unknown Unknowns: Do Hidden Intentions in LLMs Evade Detection?</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">EMNLP Findings</span>
+    <div class="pub-links"><a href="https://arxiv.org/abs/2601.18552" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('srivastav-26-unknowns')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">Gianluca De Stefano, <strong>Lea Schönherr</strong>, Giancarlo Pellegrino</div>
+    <div class="pub-title">Rag and Roll: An End-to-End Evaluation of Indirect Prompt Manipulations in LLM-based Application Frameworks</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">AISec</span>
+    <div class="pub-links"><a href="https://arxiv.org/abs/2408.05025" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('destefano-26-rag')">[BibTeX]</a></div>
+  </div>
+</div>
+
     <div class="pub-block" id="pub-chasing-shadows">
   <div class="pub-main">
     <div class="pub-authors">Jonathan Evertz, Niklas Risse, Nicolai Neuer, Andreas Müller, Philipp Normann, Gaetano Sapia, Srishti Gupta, David Pape, Soumya Shaw, Devansh Srivastav, Christian Wressnegger, Erwin Quiring, Thorsten Eisenhofer, Daniel Arp, <strong>Lea Schönherr</strong></div>
@@ -1064,7 +1115,7 @@
   </div>
   <div class="pub-right">
     <span class="venue-badge">NDSS</span>
-    <div class="pub-links"><a href="https://arxiv.org/pdf/2512.09549" target="_blank" rel="noopener">[Paper]</a> <a href="https://www.youtube.com/watch?v=iPwKbwxsxAE" target="_blank" rel="noopener">[Talk]</a> <a class="pub-link-btn" onclick="showBibtex('evertz-26-shadows')">[BibTeX]</a></div>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2512.09549" target="_blank" rel="noopener">[Paper]</a> <a href="https://llmpitfalls.org" target="_blank" rel="noopener">[Website]</a> <a href="https://www.youtube.com/watch?v=iPwKbwxsxAE" target="_blank" rel="noopener">[Talk]</a> <a class="pub-link-btn" onclick="showBibtex('evertz-26-shadows')">[BibTeX]</a></div>
   </div>
 </div>
 
@@ -1082,8 +1133,8 @@
 
     <div class="pub-block" id="pub-labeling">
   <div class="pub-main">
-    <div class="pub-authors">Sandra Höltervennhoff, Jonas Ricker, Maike M Raphael, Charlotte Schwedes, Rebecca Weil, Asja Fischer, Thorsten Holz, <strong>Lea Schönherr</strong>, Sascha Fahl</div>
-    <div class="pub-title">Security Benefits and Side Effects of Labeling AI-Generated Images</div>
+    <div class="pub-authors">Sandra Höltervennhoff, Jonas Ricker, Maike M. Raphael, Charlotte Schwedes, Rebecca Weil, Asja Fischer, Thorsten Holz, <strong>Lea Schönherr</strong>, Sascha Fahl</div>
+    <div class="pub-title">&ldquo;That&rsquo;s another doom I haven&rsquo;t thought about&rdquo;: A User Study on AI Labels as a Safeguard Against Image-Based Misinformation</div>
     <div class="pub-tags"><a href="#research-deepfakes" class="pub-tag tag-deepfakes">Deepfakes</a> <a href="#research-human" class="pub-tag tag-human">Human Factor</a></div>
   </div>
   <div class="pub-right">
@@ -1120,12 +1171,24 @@
     <div class="pub-block">
   <div class="pub-main">
     <div class="pub-authors">Jonathan Evertz, Merlin Chlosta, <strong>Lea Schönherr</strong>, Thorsten Eisenhofer</div>
-    <div class="pub-title">Whispers in the Machine: Confidentiality in LLM-integrated Systems</div>
-    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-attacksdefenses" class="pub-tag tag-privacy">Privacy</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
+    <div class="pub-title">Whispers in the Machine: Confidentiality in Agentic Systems</div>
+    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-llm" class="pub-tag tag-agents">Agents</a> <a href="#research-attacksdefenses" class="pub-tag tag-privacy">Privacy</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
   </div>
   <div class="pub-right">
     <span class="venue-badge">DIMVA</span>
     <div class="pub-links"><a href="https://eisenhofer.me/data/evertz-24-whispers.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('evertz-26-whisper')">[BibTeX]</a></div>
+  </div>
+</div>
+
+    <div class="pub-block">
+  <div class="pub-main">
+    <div class="pub-authors">Srishti Gupta, Daniele Angioni, Maura Pintor, Ambra Demontis, <strong>Lea Schönherr</strong>, Fabio Roli, Battista Biggio</div>
+    <div class="pub-title">Buffer-free Class-Incremental Learning with Out-of-Distribution Detection</div>
+    <div class="pub-tags"><a href="#research-attacksdefenses" class="pub-tag tag-adversarial">Adversarial ML</a> <a href="#research-attacksdefenses" class="pub-tag tag-defense">Defense</a></div>
+  </div>
+  <div class="pub-right">
+    <span class="venue-badge">Pattern Recognit.</span>
+    <div class="pub-links"><a href="https://arxiv.org/pdf/2505.23412" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('gupta-26-build')">[BibTeX]</a></div>
   </div>
 </div>
 
@@ -1153,18 +1216,6 @@
   </div>
 </div>
 
-    <div class="pub-block" id="pub-unknowns">
-  <div class="pub-main">
-    <div class="pub-authors">Devansh Srivastav, David Pape, <strong>Lea Schönherr</strong></div>
-    <div class="pub-title">Unknown Unknowns: Why Hidden Intentions in LLMs Evade Detection</div>
-    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
-  </div>
-  <div class="pub-right">
-    <span class="venue-badge">ArXiv</span>
-    <div class="pub-links"><a href="https://arxiv.org/abs/2601.18552" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('srivastav-26-unknowns')">[BibTeX]</a></div>
-  </div>
-</div>
-
     <h3 class="year-heading">2025</h3>
 
     <div class="pub-block" id="pub-prompt-obfuscation">
@@ -1176,18 +1227,6 @@
   <div class="pub-right">
     <span class="venue-badge">USENIX Sec.</span>
     <div class="pub-links"><a href="https://www.usenix.org/system/files/usenixsecurity25-pape.pdf" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('pape-25-obfuscation')">[BibTeX]</a></div>
-  </div>
-</div>
-
-    <div class="pub-block">
-  <div class="pub-main">
-    <div class="pub-authors">Srishti Gupta, Daniele Angioni, Maura Pintor, Ambra Demontis, <strong>Lea Schönherr</strong>, Fabio Roli, Battista Biggio</div>
-    <div class="pub-title">Buffer-free Class-Incremental Learning with Out-of-Distribution Detection</div>
-    <div class="pub-tags"><a href="#research-attacksdefenses" class="pub-tag tag-adversarial">Adversarial ML</a> <a href="#research-attacksdefenses" class="pub-tag tag-defense">Defense</a></div>
-  </div>
-  <div class="pub-right">
-    <span class="venue-badge">Pattern Recognit.</span>
-    <div class="pub-links"><a href="https://arxiv.org/pdf/2505.23412" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('gupta-25-build')">[BibTeX]</a></div>
   </div>
 </div>
 
@@ -1314,18 +1353,6 @@
   </div>
 </div>
 
-    <div class="pub-block">
-  <div class="pub-main">
-    <div class="pub-authors">Gianluca De Stefano, <strong>Lea Schönherr</strong>, Giancarlo Pellegrino</div>
-    <div class="pub-title">RAG and Roll: An End-to-End Evaluation of Indirect Prompt Manipulations in LLM-based Application Frameworks</div>
-    <div class="pub-tags"><a href="#research-llm" class="pub-tag tag-llm">LLM</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
-  </div>
-  <div class="pub-right">
-    <span class="venue-badge">ArXiv</span>
-    <div class="pub-links"><a href="https://arxiv.org/abs/2408.05025" target="_blank" rel="noopener">[Paper]</a> <a class="pub-link-btn" onclick="showBibtex('destefano-24-rag')">[BibTeX]</a></div>
-  </div>
-</div>
-
     <div class="pub-block" id="pub-hexacoder">
   <div class="pub-main">
     <div class="pub-authors">Hossein Hajipour, <strong>Lea Schönherr</strong>, Thorsten Holz, Mario Fritz</div>
@@ -1366,8 +1393,8 @@
 
     <div class="pub-block" id="pub-venomave">
   <div class="pub-main">
-    <div class="pub-authors">Hojjat Aghakhani, Thorsten Eisenhofer, <strong>Lea Schönherr</strong>, Dorothea Kolossa, Thorsten Holz, Christopher Kruegel, Giovanni Vigna</div>
-    <div class="pub-title">VENOMAVE: Clean-Label Poisoning Against Speech Recognition</div>
+    <div class="pub-authors">Hojjat Aghakhani, <strong>Lea Schönherr</strong>, Thorsten Eisenhofer, Dorothea Kolossa, Thorsten Holz, Christopher Kruegel, Giovanni Vigna</div>
+    <div class="pub-title">VENOMAVE: Targeted Poisoning Against Speech Recognition</div>
     <div class="pub-tags"><a href="#research-speech" class="pub-tag tag-speech">Speech &amp; Audio</a> <a href="#research-attacksdefenses" class="pub-tag tag-adversarial">Adversarial ML</a> <a href="#research-attacksdefenses" class="pub-tag tag-attack">Attack</a></div>
   </div>
   <div class="pub-right">
@@ -1492,12 +1519,44 @@
   </div>
 </div>
 
-
   </section>
 
   <!-- Talks -->
   <section id="talks">
     <h2>Talks</h2>
+
+    <div class="talk-block">
+      <div class="talk-year">2026</div>
+      <div class="talk-body">
+        <div class="talk-thumb talk-thumb-empty" aria-hidden="true"></div>
+        <div>
+          <div class="talk-title">"Should We Trust AI? Understanding and Mitigating Security Threats in AI" <span class="talk-keynote">Keynote</span></div>
+          <div class="talk-venue">KI 2026 — German Conference on Artificial Intelligence (German Informatics Society)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-block">
+      <div class="talk-year">2026</div>
+      <div class="talk-body">
+        <div class="talk-thumb talk-thumb-empty" aria-hidden="true"></div>
+        <div>
+          <div class="talk-title">Invited Lecture</div>
+          <div class="talk-venue">Graz Security Week — Graz, Austria</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-block">
+      <div class="talk-year">2026</div>
+      <div class="talk-body">
+        <div class="talk-thumb talk-thumb-empty" aria-hidden="true"></div>
+        <div>
+          <div class="talk-title">Invited Lecture</div>
+          <div class="talk-venue">BIFOLD Berlin Summer School of Artificial Intelligence and Society — Berlin, Germany</div>
+        </div>
+      </div>
+    </div>
 
     <div class="talk-block">
       <div class="talk-year">2026</div>
@@ -1531,6 +1590,17 @@
           <div class="talk-title">"Can We Trust Generative AI? Understanding and Mitigating Security Threats in Today's Machine Learning Systems"</div>
           <div class="talk-venue">SERICS Summer School — Cagliari, Italy</div>
           <div class="talk-desc">An invited lecture surveying the security landscape of modern generative AI—from adversarial manipulation of speech and image models to misuse of LLMs for bypassing content filters or leaking private information. Covers both the threat surface and emerging defenses including prompt obfuscation and synthetic media detection.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-block">
+      <div class="talk-year">2024</div>
+      <div class="talk-body">
+        <div class="talk-thumb talk-thumb-empty" aria-hidden="true"></div>
+        <div>
+          <div class="talk-title">"Watermarking and Labeling AI-Generated Media" <span class="talk-keynote">Panel</span></div>
+          <div class="talk-venue">EU–US Dialogue on AI</div>
         </div>
       </div>
     </div>
@@ -1680,6 +1750,11 @@
 
     <p class="press-section-label" style="margin-top: 1.5rem;">More coverage</p>
     <div class="press-plain-list">
+      <div class="press-plain-item">
+        <span class="press-pi-outlet">Deutschlandfunk / WirtschaftsWoche</span>
+        <span class="press-pi-title">Expert commentary on the Hugging Face incident involving an OpenAI model and the containment of autonomous AI agents</span>
+        <span class="press-pi-date">2026</span>
+      </div>
       <a class="press-plain-item" href="https://www.sr.de/sr/home/nachrichten/panorama/deepnudes_deepfakes_kinder_social_media_100.html" target="_blank" rel="noopener">
         <span class="press-pi-outlet">SR</span>
         <span class="press-pi-title">Deepfake-Pornografie: Vor allem Kinder und Jugendliche betroffen</span>
@@ -1690,11 +1765,31 @@
         <span class="press-pi-title">Die Scamming-Mafia: KI und moderne Sklaverei</span>
         <span class="press-pi-date">Jun 2025</span>
       </a>
+      <div class="press-plain-item">
+        <span class="press-pi-outlet">They Talk Tech</span>
+        <span class="press-pi-title">Podcast on AI-generated audio detection</span>
+        <span class="press-pi-date">2025</span>
+      </div>
       <a class="press-plain-item" href="https://www.zeit.de/digital/internet/2024-10/ki-generierte-medien-fotos-texte-identifikation-wasserzeichen" target="_blank" rel="noopener">
         <span class="press-pi-outlet">Die Zeit</span>
         <span class="press-pi-title">Zaubertinte gegen die KI-Flut</span>
         <span class="press-pi-date">Oct 2024</span>
       </a>
+      <div class="press-plain-item">
+        <span class="press-pi-outlet">HIDA</span>
+        <span class="press-pi-title">Interview on generative AI misuse, synthetic media, and security vulnerabilities in AI systems</span>
+        <span class="press-pi-date">2024</span>
+      </div>
+      <div class="press-plain-item">
+        <span class="press-pi-outlet">CISPA</span>
+        <span class="press-pi-title">No Coffee, No Research: deepfakes and the limits of human and automated detection</span>
+        <span class="press-pi-date">2024</span>
+      </div>
+      <div class="press-plain-item">
+        <span class="press-pi-outlet">CISPA TL;DR</span>
+        <span class="press-pi-title">Women in Cybersecurity podcast: LLM security, adversarial machine learning, and pathways into research</span>
+        <span class="press-pi-date">2023</span>
+      </div>
       <a class="press-plain-item" href="https://www.handelsblatt.com/technik/it-internet/cyberkriminalitaet-wie-der-enkeltrick-nur-mit-ki-deepfake-betrueger-erpressen-firmen-mit-falscher-chef-stimme/28003742.html" target="_blank" rel="noopener">
         <span class="press-pi-outlet">Handelsblatt</span>
         <span class="press-pi-title">Wie der Enkeltrick, nur mit KI: Deepfake-Betrüger erpressen Firmen mit falscher Chef-Stimme</span>
@@ -1800,6 +1895,11 @@
         <span class="press-pi-title">Alexa can be hacked — by chirping birds</span>
         <span class="press-pi-date">Sep 2018</span>
       </a>
+      <div class="press-plain-item">
+        <span class="press-pi-outlet">ORF Ö3</span>
+        <span class="press-pi-title">Radio interview on hidden voice commands and adversarial attacks against speech recognition</span>
+        <span class="press-pi-date">Oct 2018</span>
+      </div>
       <a class="press-plain-item" href="https://www.deutschlandfunk.de/sicherheitsluecken-bei-sprachassistenzsystemen-alexa-hoert-100.html" target="_blank" rel="noopener">
         <span class="press-pi-outlet">Deutschlandfunk</span>
         <span class="press-pi-title">Sicherheitslücken bei Sprachassistenzsystemen — Alexa hört anders als ein Mensch</span>
@@ -1870,6 +1970,32 @@
             <li><strong>Fairness:</strong> Biases in training data and their societal and legal implications.</li>
             <li><strong>Trustworthy Generative AI:</strong> LLM security, prompt injection, data leakage, and deepfake detection.</li>
           </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="teaching-block">
+      <div class="teaching-year">Winter 2026</div>
+      <div>
+        <div class="teaching-name">Humans and Trustworthy AI Systems</div>
+        <div class="teaching-tags">
+          <span class="teaching-type-tag">Master</span>
+          <span class="teaching-type-tag">Seminar</span>
+          <span class="teaching-loc-tag"><img src="media/uds_owl.svg" alt="">Saarland University</span>
+        </div>
+        <div class="teaching-desc">
+          <p>AI systems are deployed among people, and whether they can be trusted depends as much on how humans perceive, use, and are affected by them as on their technical security. This seminar, co-taught with <a href="https://maximiliangolla.com" target="_blank" rel="noopener">Maximilian Golla</a>, examines trustworthy AI at the intersection of technical systems and human behavior, with a roughly equal balance between human-centered usable security and privacy topics and the technical security of AI, machine learning, and large language model systems.</p>
+          <p>Students read recent research publications, present a selected topic, and lead a critical discussion, learning to analyze AI systems from both perspectives, assess research critically, identify potential harms, and communicate findings clearly.</p>
+          <p class="teaching-desc-heading">Topics Covered</p>
+          <ul>
+            <li>Users' mental models of AI and privacy concerns</li>
+            <li>Vulnerable and marginalized user groups</li>
+            <li>Technology-facilitated abuse, scams, and misinformation</li>
+            <li>Secure code generation and offensive use of AI</li>
+            <li>Risks of autonomous AI agents</li>
+            <li>Detection of generated media</li>
+          </ul>
+          <p><a href="https://cms.cispa.saarland/htai/" target="_blank" rel="noopener">Course website</a></p>
         </div>
       </div>
     </div>
@@ -1963,6 +2089,51 @@
     <p class="service-subsection-label">Chairs &amp; Organization</p>
 
     <div class="service-block">
+      <div class="service-year">2027</div>
+      <div class="service-main">
+        <div class="service-role">Summer School Organizer</div>
+        <div class="service-venue">SCAIS: Summer School on the Science of AI Security — planned</div>
+        <div class="service-tags"><span class="service-chair-tag">Organizer</span></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2027</div>
+      <div class="service-main">
+        <div class="service-role">Workshop Organizer</div>
+        <div class="service-venue"><a href="https://mirror-workshop.io" target="_blank" rel="noopener">MIRROR: A Workshop on Meta-science in AI Security Research</a>, co-located with IEEE SaTML — planned</div>
+        <div class="service-tags"><span class="service-chair-tag">Organizer</span></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2027</div>
+      <div class="service-main">
+        <div class="service-role">Workshop Organizer</div>
+        <div class="service-venue"><a href="https://advml-frontier.github.io/satml2027/" target="_blank" rel="noopener">New AdvML-Frontiers: Human Centered Trustworthy Machine Learning</a>, co-located with IEEE SaTML — planned</div>
+        <div class="service-tags"><span class="service-chair-tag">Organizer</span></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2027</div>
+      <div class="service-main">
+        <div class="service-role">Area Chair</div>
+        <div class="service-venue">USENIX Security Symposium</div>
+        <div class="service-tags"><span class="service-chair-tag">Area Chair</span></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2027</div>
+      <div class="service-main">
+        <div class="service-role">Area Chair</div>
+        <div class="service-venue">IEEE Secure and Trustworthy Machine Learning (SaTML)</div>
+        <div class="service-tags"><span class="service-chair-tag">Area Chair</span></div>
+      </div>
+    </div>
+
+    <div class="service-block">
       <div class="service-year">2026</div>
       <div class="service-main">
         <div class="service-role">co-Track Chair</div>
@@ -1977,6 +2148,15 @@
         <div class="service-role">co-General Chair</div>
         <div class="service-venue">IEEE Secure and Trustworthy Machine Learning (SaTML) — TU Munich</div>
         <div class="service-tags"><span class="service-chair-tag">General Chair</span></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2026</div>
+      <div class="service-main">
+        <div class="service-role">Summer School co-Organizer</div>
+        <div class="service-venue">CISPA–UCT Summer School on AI, Security &amp; Privacy — Cape Town, South Africa</div>
+        <div class="service-tags"><span class="service-chair-tag">Organizer</span></div>
       </div>
     </div>
 
@@ -2003,7 +2183,23 @@
     <div class="service-block">
       <div class="service-year">2026</div>
       <div class="service-main">
+        <div class="service-role">Nature (Reviewer)</div>
+        <div class="service-tags"></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2026</div>
+      <div class="service-main">
         <div class="service-role">IEEE Security &amp; Privacy (S&amp;P)</div>
+        <div class="service-tags"></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2025 – 2026</div>
+      <div class="service-main">
+        <div class="service-role">ICLR</div>
         <div class="service-tags"></div>
       </div>
     </div>
@@ -2011,7 +2207,7 @@
     <div class="service-block">
       <div class="service-year">2025</div>
       <div class="service-main">
-        <div class="service-role">ICLR &amp; ICML</div>
+        <div class="service-role">ICML</div>
         <div class="service-tags"></div>
       </div>
     </div>
@@ -2019,13 +2215,21 @@
     <div class="service-block">
       <div class="service-year">2024 – 2025</div>
       <div class="service-main">
-        <div class="service-role">NeurIPS &amp; NeurIPS Datasets and Benchmarks Track</div>
+        <div class="service-role">NeurIPS</div>
         <div class="service-tags"></div>
       </div>
     </div>
 
     <div class="service-block">
-      <div class="service-year">2023 – 2025</div>
+      <div class="service-year">2022 – 2024</div>
+      <div class="service-main">
+        <div class="service-role">NeurIPS Datasets and Benchmarks Track</div>
+        <div class="service-tags"></div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-year">2023, 2025</div>
       <div class="service-main">
         <div class="service-role">USENIX Security Symposium</div>
         <div class="service-tags"></div>
